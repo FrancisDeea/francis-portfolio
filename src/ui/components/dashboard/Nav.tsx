@@ -5,8 +5,8 @@ import { ProjectIcon, PostIcon } from '../../icons'
 export default function Nav() {
     return (
         <nav className="flex flex-col justify-between gap-3">
-                <NavButton path="/projects" value="Proyects" icon={<ProjectIcon />} />
-                <NavButton path="/posts" value="Posts" icon={<PostIcon />} />
+                <NavButton path="/dashboard/projects" value="Proyects" icon={<ProjectIcon />} />
+                <NavButton path="/dashboard/posts" value="Posts" icon={<PostIcon />} />
                 <LogoutButton />
         </nav>
     )
