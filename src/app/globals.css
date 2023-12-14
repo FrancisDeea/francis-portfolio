@@ -12,16 +12,16 @@
       @apply w-full rounded-md text-black h-8 px-2;
     }
     input:not(:last-child) {
-      @apply mb-3
+      @apply mb-3;
     }
     input:focus {
-      @apply outline-none ring-2 ring-slate-600 ring-offset-2 ring-offset-slate-300
+      @apply outline-none ring-2 ring-slate-600 ring-offset-2 ring-offset-slate-300;
     }
     textarea {
-      @apply resize-none w-full flex-1 text-black rounded-md p-2 mb-3
+      @apply resize-none w-full flex-1 text-black rounded-md p-2 mb-3;
     }
     input[type="submit"] {
-       @apply bg-slate-400 hover:bg-slate-500 font-bold
+      @apply bg-slate-400 hover:bg-slate-500 font-bold;
     }
   }
 }
@@ -42,4 +42,8 @@
 
 body {
   color: white;
+}
+
+h1 {
+  font-size: 2rem;
 }
