@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import MDEditor from '@uiw/react-md-editor';
+import Editor from "./Editor";
 
 export default function CreateProjectFormTest() {
     const [md, setMd] = useState("")
@@ -28,16 +29,7 @@ export default function CreateProjectFormTest() {
                 Enter description:
             </label>
 
-
-            <div className="container">
-                <MDEditor
-                    value={md}
-                    onChange={setMd}
-                    name="content"
-                    
-                />
-                <MDEditor.Markdown source={md} style={{ whiteSpace: 'pre-wrap' }} />
-            </div>
+            <Editor />
 
             <input type="submit" value="Create" />
         </form>

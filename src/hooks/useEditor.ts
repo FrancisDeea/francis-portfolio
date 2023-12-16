@@ -1,14 +1,15 @@
 import { RefObject, useState } from "react";
+import { handleSelected } from "@/lib/utils";
 
 const useEditor = (ref: RefObject<HTMLTextAreaElement>) => {
   const [markdown, setMarkdown] = useState("");
-  const [nextPosition, setNextPosition] = useState<number>(0)
+  const [nextPosition, setNextPosition] = useState<number | null>(0)
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMarkdown(e.target.value);
   };
 
-  const handleTools = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleTools = async (e: React.MouseEvent<HTMLButtonElement>) => {
     const position = ref.current?.selectionStart ?? 1
     const finalPosition = ref.current?.selectionEnd ?? 0
     const length = markdown.length
@@ -63,6 +64,13 @@ const useEditor = (ref: RefObject<HTMLTextAreaElement>) => {
       case "italic":
         finalPosition !== position ? setMarkdown((prevState) => prevState.substring(0, position) + "*" + prevState.substring(position, finalPosition) + "*" + prevState.substring(finalPosition)) : setMarkdown((prevState) => prevState.substring(0, position) + "**" + prevState.substring(position))
         finalPosition !== position ? setNextPosition(finalPosition + 2) : setNextPosition(position + 1)
+        break;
+      case "image":
+        const response = await handleSelected()
+        const md = `![image](/project-images/${response})`
+        console.log(response)
+        checkHeadingRules ? setMarkdown((prevState) => prevState.substring(0, position) + `\n${md}` + prevState.substring(position)) : setMarkdown((prevState) => prevState.substring(0, position) + `${md}` + prevState.substring(position))
+        setNextPosition(finalPosition + md.length)
         break;
     }
   };
