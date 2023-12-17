@@ -1,4 +1,4 @@
-import { IconArticle, IconUser, IconLogout2, IconTrash, IconEye, IconEdit,IconHeading, IconH1, IconH2, IconH3, IconLink, IconBlockquote, IconCode, IconPhoto, IconList, IconListNumbers, IconBold, IconItalic } from '@tabler/icons-react';
+import { IconArticle, IconUser, IconLogout2, IconTrash, IconEye, IconEdit,IconHeading, IconH1, IconH2, IconH3, IconLink, IconBlockquote, IconCode, IconPhoto, IconList, IconListNumbers, IconBold, IconItalic, IconSquareX } from '@tabler/icons-react';
 
 export const PostIcon = () => <IconArticle size={22} />
 export const ProjectIcon = () => <IconUser size={22} />
@@ -18,3 +18,4 @@ export const ListIcon = () => <IconList size={16} />
 export const ListNumberIcon = () => <IconListNumbers size={16} />
 export const BoldIcon = () => <IconBold size={16} />
 export const ItalicIcon = () => <IconItalic size={16} />
+export const CloseIcon = () => <IconSquareX size={30} />

@@ -4,15 +4,14 @@ import { BoldIcon, CodeIcon, ImageIcon, ItalicIcon, LinkIcon, ListIcon, ListNumb
 
 import ToolButton from "./ToolButton";
 import HeadingToolButton from "./HeadingToolButton";
+import Preview from "./Preview";
 
-import { marked } from "marked";
 import useEditor from "@/hooks/useEditor";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Editor() {
     const ref = useRef<HTMLTextAreaElement>(null)
     const { markdown, handleChange, handleTools, nextPosition } = useEditor(ref)
-    const [selectStart, setSelectStart] = useState(null)
 
     useEffect(() => {
         ref.current?.focus()
@@ -33,10 +32,10 @@ export default function Editor() {
                     <ToolButton handleTools={handleTools} value="bold" title="Bold" icon={<BoldIcon />} />
                     <ToolButton handleTools={handleTools} value="italic" title="Italic" icon={<ItalicIcon />} />
                 </div>
-                <textarea ref={ref} value={markdown} onChange={handleChange} id="editor" className="w-full h-full rounded-md p-2 resize-none" />
+                <textarea ref={ref} value={markdown} onChange={handleChange} id="editor" placeholder="Enter description" className="w-full h-full rounded-md p-2 resize-none" />
                 <input type="file" id="file" accept="image/*" size={500000} className="hidden"/>
             </div>
-            <div id="preview" dangerouslySetInnerHTML={{ __html: marked.parse(markdown) }} className="flex-1 basis-[200px] rounded-md p-2 bg-white overflow-y-scroll"></div>
+            <Preview markdown={markdown} />
         </div>
     )
 }

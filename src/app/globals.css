@@ -4,24 +4,13 @@
 
 @layer base {
   #projectForm {
-    @apply h-full flex flex-col;
-    label {
-      @apply block font-bold mb-1;
-    }
+    @apply h-full flex flex-col gap-4;
+
     input {
-      @apply w-full rounded-md text-black h-8 px-2;
+      @apply w-full rounded-md text-black h-8 p-2;
     }
-    input:not(:last-child) {
-      @apply mb-3;
-    }
-    input:focus {
-      @apply outline-none ring-2 ring-slate-600 ring-offset-2 ring-offset-slate-300;
-    }
-    textarea {
-      @apply resize-none w-full flex-1 text-black rounded-md p-2 mb-3;
-    }
-    input[type="submit"] {
-      @apply bg-slate-400 hover:bg-slate-500 font-bold;
+    input[type="submit"], button.preview {
+      @apply bg-slate-400 hover:bg-slate-500 font-bold h-10 w-1/2 rounded-lg text-black max-w-xs;
     }
   }
 }
@@ -42,6 +31,8 @@
 
 body {
   color: white;
+  min-height: 100vh;
+  position: relative;
 }
 
 h1, h2, h3, h4 {
@@ -73,9 +64,6 @@ code {
   width: 100%;
   border-radius: 10px;
   margin: 10px 0;
-}
-
-#preview {
 }
 
 
