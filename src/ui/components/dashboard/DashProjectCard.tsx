@@ -1,9 +1,14 @@
+'use client'
+
 import type { DashProject } from "@/lib/definitions"
+import { removeProject } from "@/services/projectServices"
+
 import { DeleteIcon, ViewIcon, EditIcon } from "@/ui/icons"
 import TagList from "../TagList"
 
 export default function DashProjectCard({ project }: { project: DashProject }) {
     const { id, title, description, image_url, technologies } = project
+
     return (
         <table className="bg-slate-200 text-black rounded-md w-full">
             <thead className="h-5 text-left">
@@ -26,7 +31,7 @@ export default function DashProjectCard({ project }: { project: DashProject }) {
                         <button>
                             <EditIcon />
                         </button>
-                        <button>
+                        <button onClick={() => removeProject(id)}>
                             <DeleteIcon />
                         </button>
                     </td>

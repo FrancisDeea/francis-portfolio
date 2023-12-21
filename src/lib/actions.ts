@@ -2,27 +2,10 @@
 
 import { sql } from "@vercel/postgres";
 import { technologiesToPSQLArray } from "./utils";
-import { z } from "zod";
+import { createProjectSchema } from "./zodSchemas";
+
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-
-const createProjectSchema = z.object({
-  title: z.string({
-    invalid_type_error: "Invalid project title",
-  }),
-  image: z.string().url({
-    message: "You have to specify a valid url",
-  }),
-  technologies: z.string().array().nonempty({
-    message: "You have to specify at least one technology",
-  }),
-  // technologies: z.string({
-  //   invalid_type_error: "Invalid project title",
-  // }),
-  description: z.string({
-    invalid_type_error: "Invalid description",
-  }),
-});
 
 export async function createProject(prevState: any, formData: FormData) {
   const technologiesRawData = (
@@ -52,8 +35,6 @@ export async function createProject(prevState: any, formData: FormData) {
 
   const { title, image, technologies, description } = validatedFormData.data;
 
-  console.log(title, image, technologies, description);
-
   const postgresqTechArray = await technologiesToPSQLArray(technologies);
 
   try {
@@ -62,15 +43,28 @@ export async function createProject(prevState: any, formData: FormData) {
   } catch (err) {
     console.error(err);
     return {
-      message: JSON.stringify(`Failed to save project in DDBB: ${err}`),
+      message: JSON.stringify(`Failed to save project in DDBB: ${err.code}`),
       status: "error",
     };
   }
 
   revalidatePath("/dashboard/projects");
+  redirect("/dashboard/projects");
 
   return {
     message: "Project created successfully!",
     status: "success",
   };
+}
+
+export async function deleteProject(id: string) {
+  try {
+    await sql`DELETE FROM projects WHERE id = ${id}`;
+  } catch (err) {
+    console.error(err);
+    throw new Error(
+      JSON.stringify(`Failed to save project in DDBB: ${err.code}`)
+    );
+  }
+  revalidatePath("/dashboard/projects");
 }
