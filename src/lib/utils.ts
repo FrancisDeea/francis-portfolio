@@ -24,3 +24,15 @@ export async function handleSelected() {
   }
 
 }
+
+export async function technologiesToPSQLArray(array: string[]) {
+  const result = ['{', '}']
+  for (let i = 0; i < array.length; i++) {
+    if (i !== array.length - 1) {
+      result.splice(result.length - 1, 0, array[i], ",")
+    } else {
+      result.splice(result.length - 1, 0, array[i])
+    }
+  }
+  return result.join("")
+}
