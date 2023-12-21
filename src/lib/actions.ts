@@ -3,6 +3,8 @@
 import { sql } from "@vercel/postgres";
 import { technologiesToPSQLArray } from "./utils";
 import { z } from "zod";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 const createProjectSchema = z.object({
   title: z.string({
@@ -22,7 +24,7 @@ const createProjectSchema = z.object({
   }),
 });
 
-export async function createProject(formData: FormData) {
+export async function createProject(prevState: any, formData: FormData) {
   const technologiesRawData = (
     formData.get("technologies") as string
   ).toString();
@@ -40,9 +42,11 @@ export async function createProject(formData: FormData) {
   });
 
   if (!validatedFormData.success) {
-    console.log(validatedFormData.error.flatten().fieldErrors);
     return {
-      error: validatedFormData.error.flatten().fieldErrors,
+      message: JSON.stringify(
+        Object.values(validatedFormData.error.flatten().fieldErrors).join(", ")
+      ),
+      status: "error",
     };
   }
 
@@ -57,5 +61,16 @@ export async function createProject(formData: FormData) {
       VALUES(${title}, ${image}, ${postgresqTechArray}, ${description})`;
   } catch (err) {
     console.error(err);
+    return {
+      message: JSON.stringify(`Failed to save project in DDBB: ${err}`),
+      status: "error",
+    };
   }
+
+  revalidatePath("/dashboard/projects");
+
+  return {
+    message: "Project created successfully!",
+    status: "success",
+  };
 }

@@ -2,8 +2,21 @@
 
 import { createProject } from "@/lib/actions";
 import Editor from "./Editor";
+import { useFormStatus, useFormState } from "react-dom";
+import useNotification from "@/hooks/useNotification";
+
+const Submit = () => {
+    const { pending } = useFormStatus()
+
+    return (
+        <button type="submit" aria-disabled={pending} disabled={pending} className="preview">{pending ? "Submitting..." : "Create"}</button>
+    )
+
+}
 
 export default function CreateProjectForm() {
+    const [formState, formAction] = useFormState(createProject, null)
+    useNotification(formState)
 
     const handlePreview = () => {
         const preview = document.getElementById('preview-modal') as HTMLDialogElement
@@ -11,7 +24,7 @@ export default function CreateProjectForm() {
     }
 
     return (
-        <form id="projectForm" className="" action={createProject}>
+        <form id="projectForm" className="" action={formAction}>
 
             <input id="title_project" type="text" name="title" maxLength={255} placeholder="Enter project title" required />
 
@@ -22,7 +35,7 @@ export default function CreateProjectForm() {
             <Editor />
 
             <div className="flex gap-2 justify-center lg:justify-start">
-                <input type="submit" value="Create" />
+                <Submit />
                 <button type="button" onClick={handlePreview} className="preview">Show preview</button>
             </div>
         </form>
