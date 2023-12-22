@@ -6,10 +6,10 @@
   #projectForm {
     @apply h-full flex flex-col gap-4;
 
-    input {
+    input:not([type="file"]) {
       @apply w-full rounded-md text-black h-8 p-2;
     }
-    input[type="submit"], button.preview {
+    input[type="submit"], button.preview, label.preview {
       @apply bg-slate-400 hover:bg-slate-500 font-bold h-10 w-1/2 rounded-lg text-black max-w-xs;
     }
   }

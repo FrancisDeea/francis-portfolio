@@ -1,13 +1,9 @@
-import { zfd } from "zod-form-data";
+import { imageServerSchema } from "@/lib/zodSchemas";
 import { writeFile } from "node:fs/promises";
 import { NextResponse } from "next/server";
 
-const schema = zfd.formData({
-  image: zfd.file(),
-});
-
 export async function POST(request: Request) {
-  const { image } = schema.parse(await request.formData());
+  const { image } = imageServerSchema.parse(await request.formData());
   const buffer = await image.arrayBuffer();
 
   try {
