@@ -7,3 +7,8 @@ export const fetchAllProjects = async () => {
   const projects = await sql<DashProject>`SELECT * FROM projects;`;
   return projects.rows;
 };
+
+export const fetchLastProject = async (number: number) => {
+  const projects = await sql<DashProject>`SELECT * FROM projects LIMIT ${number};`;
+  return projects.rows;
+}

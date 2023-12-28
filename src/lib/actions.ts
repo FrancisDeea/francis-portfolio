@@ -80,4 +80,5 @@ export async function deleteProject(id: string) {
     );
   }
   revalidatePath("/dashboard/projects");
+  revalidatePath("/projects");
 }

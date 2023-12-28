@@ -3,57 +3,101 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background1: 225deg 59% 11%;
+    --background2: 225deg 40% 18%;
+    --dark: 2 6 23;
+    --medium: 213deg 30% 32%;
+    --text: 213deg 51% 72%;
+    --alert: 358deg 100% 67%;
+    --gradient: linear-gradient(90deg, hsla(225, 59%, 11%, 1) 0%, hsla(226, 58%, 17%, 1) 100%);
+  }
+
+  [class="dark"] {
+    --background1: 225deg 59% 11%;
+    --background2: 225deg 40% 18%;
+    --dark: 2 6 23;
+    --medium: 213deg 30% 32%;
+    --text: 213deg 51% 72%;
+    --alert: 358deg 100% 67%;
+    --gradient: linear-gradient(90deg, hsla(225, 59%, 11%, 1) 0%, hsla(226, 58%, 17%, 1) 100%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background1: 225deg 59% 11%;
+      --background2: 225deg 40% 18%;
+      --dark: 2 6 23;
+      --medium: 213deg 30% 32%;
+      --text: 213deg 51% 72%;
+      --alert: 358deg 100% 67%;
+    }
+  }
+
+  body {
+    @apply bg-gradient text-text;
+  }
+
+  h1, h2 {
+    @apply font-bold text-3xl text-slate-50;
+  }
+
+  h3 {
+    @apply font-semibold text-2xl text-slate-50
+  }
+
+  p {
+    @apply text-lg md:text-xl;
+  }
+
   #projectForm {
     @apply h-full flex flex-col gap-4;
 
     input:not([type="file"]) {
       @apply w-full rounded-md text-black h-8 p-2;
     }
-    input[type="submit"], button.preview, label.preview {
+    input[type="submit"],
+    button.preview,
+    label.preview {
       @apply bg-slate-400 hover:bg-slate-500 font-bold h-10 w-1/2 rounded-lg text-black max-w-xs;
     }
   }
 }
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer components {
+  .btn-link {
+    @apply rounded-md py-2 px-3 font-medium bg-background1 border-2 border-alert/30 hover:bg-alert/30 hover:text-slate-50 w-max;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  .ct-flex-col {
+    @apply flex flex-col gap-4 justify-center;
+  }
+
+  .ct-flex-row {
+    @apply flex flex-row gap-4 items-center;
+  }
+
+  .section {
+    @apply border border-medium rounded-3xl p-4;
+  }
+
+  .no-scrollbar:-moz-scrollbar {
+    display: none;
   }
 }
 
 body {
-  color: white;
-  min-height: 100vh;
-  position: relative;
+  min-height: 100vh
 }
 
-h1, h2, h3, h4 {
-  margin-bottom: 10px;
-  line-height: 2.6rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.5rem;
+main {
+  margin: auto;
+  padding: 0.5rem;
+  max-width: 1400px;
 }
 
 p {
-  margin-bottom: 10px;
+  text-wrap: balance;
 }
 
 code {
@@ -66,4 +110,15 @@ code {
   margin: 10px 0;
 }
 
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-flow: row;
+  gap: 1rem;
+}
 
+@media (min-width: 1024px) {
+  .custom-grid {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
