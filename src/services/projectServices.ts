@@ -1,3 +1,5 @@
+'use client'
+
 import { deleteProject } from "@/lib/actions";
 
 export const uploadFile = async (formData: FormData) => {
