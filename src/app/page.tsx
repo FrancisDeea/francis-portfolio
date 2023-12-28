@@ -3,11 +3,12 @@ import Link from "next/link"
 import { LinkedinIcon, MailIcon, GithubIcon } from "@/ui/icons"
 import LastProjects from "@/ui/components/LastProjects"
 import LatestPosts from "@/ui/components/LatestPosts"
+import SocialSection from "@/ui/components/SocialSection"
 
 export default function Index() {
 
   return (
-    <main className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <main className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
       <section className="section bg-dark ct-flex-col min-[550px]:flex-row md:col-span-2">
         <img
@@ -37,6 +38,8 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <SocialSection />
 
       <LatestPosts />
 

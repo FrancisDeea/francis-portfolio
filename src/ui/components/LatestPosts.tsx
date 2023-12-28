@@ -3,9 +3,9 @@ import { HtmlIcon } from "../icons"
 export default async function LatestPosts() {
 
     return (
-        <section className="section bg-red-950 border-dark lg:col-start-2 lg:col-span-2">
+        <section className="section bg-background2 border-medium md:col-start-1 md:col-span-2 lg:col-start-2 lg:col-span-2">
             <div className="ct-flex-col">
-                <h2>Latest Posts</h2>
+                <h2>Learn with my latest short text lessons easily</h2>
                 <article className="ct-flex-row rounded-md bg-slate-950 p-4 h-min overflow-x-scroll scrollbar-hide">
                     <HtmlIcon size={10} />
                     <div className="ct-flex-col gap-1">

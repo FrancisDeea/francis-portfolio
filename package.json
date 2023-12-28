@@ -14,7 +14,6 @@
     "@next/mdx": "^14.0.4",
     "@tabler/icons-react": "^2.43.0",
     "@types/mdx": "^2.0.10",
-    "@uiw/react-md-editor": "^4.0.1",
     "@vercel/postgres": "^0.5.1",
     "marked": "^11.1.0",
     "next": "14.0.4",
@@ -25,7 +24,6 @@
     "zod-form-data": "^2.0.2"
   },
   "devDependencies": {
-    "@iconify-icon/react": "^1.0.8",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
