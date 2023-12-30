@@ -6,13 +6,13 @@ export default async function Projects() {
     const projects = await fetchAllProjects()
 
     return (
-        <section className="bg-slate-300 w-full p-4 rounded-2xl">
-            <div className="flex flex-row items-end justify-between w-full mb-4">
-                <h1 className="text-3xl font-bold">Francis&apos;s Projects</h1>
+        <section className="section w-full">
+            <div className="ct-flex-row justify-between items-end mb-4">
+                <h1 className="">Francis&apos;s Projects</h1>
                 <NavButton path="/dashboard/projects/create" value="Create project" icon={null} customStyle="w-max" />
             </div>
 
-            <div>
+            <div className="ct-flex-col">
                 {
                     projects.map(project => {
                         return (
