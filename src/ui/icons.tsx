@@ -63,43 +63,116 @@ export const GithubIcon = () => {
     )
 }
 
-export const ReactIcon = () => {
+export const ReactIcon = ({ size }: { size: number }) => {
     return (
-        <img className='h-5' src="/svg/react.svg" alt="react icon" title='React' />
+        <img className={`h-${size}`} src="/svg/react.svg" alt="react icon" title='React' />
     )
 }
 
-export const JavascriptIcon = () => {
+export const JavascriptIcon = ({ size }: { size: number }) => {
     return (
-        <img className='h-5' src="/svg/javascript.svg" alt="javascript icon" title='JavaScript' />
+        <img className={`h-${size}`} src="/svg/javascript.svg" alt="javascript icon" title='JavaScript' />
     )
 }
 
-export const HtmlIcon = ({ size }: { size: number}) => {
+export const HtmlIcon = ({ size }: { size: number }) => {
     return (
         <img className={`h-${size}`} src="/svg/html5.svg" alt="html icon" title='HTML' />
     )
 }
 
-export const SassIcon = () => {
+export const SassIcon = ({ size }: { size: number }) => {
     return (
-        <img className='h-5' src="/svg/sass.svg" alt="sass icon" title='Sass' />
+        <img className={`h-${size}`} src="/svg/sass.svg" alt="sass icon" title='Sass' />
+    )
+}
+
+export const ExpressIcon = ({ size }: { size: number }) => {
+    return (
+        <img className={`h-${size}`} src="/svg/Express.js.svg" alt="express icon" title='ExpressJS' />
+    )
+}
+
+export const MongoIcon = ({ size }: { size: number }) => {
+    return (
+        <img className={`h-${size}`} src="/svg/mongodb.svg" alt="mongo icon" title='MongoDB' />
+    )
+}
+
+export const NextIcon = ({ size }: { size: number }) => {
+    return (
+        <img className={`h-${size}`} src="/svg/nextjs.svg" alt="next icon" title='NextJS' />
+    )
+}
+
+export const NodeIcon = ({ size }: { size: number }) => {
+    return (
+        <img className={`h-${size}`} src="/svg/nodejs.svg" alt="node icon" title='NodeJS' />
+    )
+}
+
+export const PostgresIcon = ({ size }: { size: number }) => {
+    return (
+        <img className={`h-${size}`} src="/svg/postgresql.svg" alt="postgresql icon" title='PostgreSQL' />
+    )
+}
+
+export const ReduxIcon = ({ size }: { size: number }) => {
+    return (
+        <img className={`h-${size}`} src="/svg/redux.svg" alt="redux icon" title='Redux' />
+    )
+}
+
+export const TailwindIcon = ({ size }: { size: number }) => {
+    return (
+        <img className={`h-${size}`} src="/svg/tailwindcss.svg" alt="tailwind icon" title='TailwindCSS' />
+    )
+}
+
+export const CssIcon = ({ size }: { size: number }) => {
+    return (
+        <img className={`h-${size}`} src="/svg/css.svg" alt="css icon" title='CSS' />
     )
 }
 
 export function findIcon(technology: string) {
     switch (technology.toLowerCase()) {
         case 'react':
-            return <ReactIcon />
+            return <ReactIcon size={5} />
             break
         case 'javascript':
-            return <JavascriptIcon />
+            return <JavascriptIcon size={5} />
             break
-        // case 'html':
-        //     return <HtmlIcon />
-        //     break
+        case 'html':
+            return <HtmlIcon size={5} />
+            break
         case 'scss' || 'sass':
-            return <SassIcon />
+            return <SassIcon size={5} />
+            break
+        case 'express' || 'expressjs':
+            return <ExpressIcon size={5} />
+            break
+        case 'mongo' || 'mongodb':
+            return <MongoIcon size={5} />
+            break
+        case 'next' || 'nextjs':
+            return <NextIcon size={5} />
+            break
+        case 'node' || 'nodejs':
+            return <NodeIcon size={5} />
+            break
+        case 'postgresql':
+            return <PostgresIcon size={5} />
+            break
+        case 'redux':
+            return <ReduxIcon size={5} />
+            break
+        case 'tailwind' || 'tailwindcss':
+            return <TailwindIcon size={5} />
+            break
+        case 'css':
+            return <CssIcon size={5} />
+            break
         default:
             return technology
             break

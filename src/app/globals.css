@@ -10,7 +10,11 @@
     --medium: 213deg 30% 32%;
     --text: 213deg 51% 72%;
     --alert: 358deg 100% 67%;
-    --gradient: linear-gradient(90deg, hsla(225, 59%, 8%, 1) 0%, hsla(226, 58%, 12%, 1) 100%);
+    --gradient: linear-gradient(
+      90deg,
+      hsla(225, 59%, 8%, 1) 0%,
+      hsla(226, 58%, 12%, 1) 100%
+    );
   }
 
   [class="dark"] {
@@ -20,7 +24,11 @@
     --medium: 213deg 30% 32%;
     --text: 213deg 51% 72%;
     --alert: 358deg 100% 67%;
-    --gradient: linear-gradient(90deg, hsla(225, 59%, 8%, 1) 0%, hsla(226, 58%, 12%, 1) 100%);
+    --gradient: linear-gradient(
+      90deg,
+      hsla(225, 59%, 8%, 1) 0%,
+      hsla(226, 58%, 12%, 1) 100%
+    );
   }
 
   @media (prefers-color-scheme: dark) {
@@ -31,7 +39,11 @@
       --medium: 213deg 30% 32%;
       --text: 213deg 51% 72%;
       --alert: 358deg 100% 67%;
-      --gradient: linear-gradient(90deg, hsla(225, 59%, 8%, 1) 0%, hsla(226, 58%, 12%, 1) 100%);
+      --gradient: linear-gradient(
+        90deg,
+        hsla(225, 59%, 8%, 1) 0%,
+        hsla(226, 58%, 12%, 1) 100%
+      );
     }
   }
 
@@ -39,12 +51,18 @@
     @apply bg-gradient text-text;
   }
 
-  h1, h2 {
-    @apply font-bold text-3xl text-slate-50;
+  h1,
+  h2 {
+    @apply font-bold text-3xl max-md:text-2xl;
+  }
+
+  h2,
+  h3 {
+    @apply text-slate-300;
   }
 
   h3 {
-    @apply font-semibold text-2xl text-slate-50
+    @apply font-semibold text-2xl max-md:text-xl text-slate-50;
   }
 
   p {
@@ -71,7 +89,7 @@
   }
 
   .btn-link {
-    @apply rounded-md py-2 px-3 font-medium bg-background1 border-2 border-alert/30 hover:bg-alert/30 hover:text-slate-50 w-max;
+    @apply rounded-md py-2 px-3 font-medium bg-background1 border-2 border-medium hover:bg-alert/30 hover:text-slate-50 w-max;
   }
 
   .ct-flex-col {
@@ -93,33 +111,46 @@
 
 @layer utilities {
   .tiktok-style {
-    background: linear-gradient(black, black) padding-box, linear-gradient(to right, #b8b8b8, #de8c9d, #fe2858, #2af0ea, #397684) border-box;
+    background: linear-gradient(black, black) padding-box,
+      linear-gradient(to right, #b8b8b8, #de8c9d, #fe2858, #2af0ea, #397684)
+        border-box;
     border-color: transparent;
   }
 
   .instagram-style {
-    background: linear-gradient(to right, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5) border-box;
+    background: linear-gradient(
+        to right,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+      )
+      border-box;
     border-color: transparent;
   }
 
   .youtube-style {
-    background: #FF0000 border-box;
+    background: #ff0000 border-box;
     border-color: transparent;
   }
 }
 
 body {
-  min-height: 100vh
+  min-height: 100vh;
 }
 
 main {
   margin: auto;
-  padding: 0.5rem;
-  max-width: 1400px;
+  padding: 1.5rem 1rem;
+  max-width: 1200px;
 }
 
+h1,
+h2,
+h3,
 p {
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 code {

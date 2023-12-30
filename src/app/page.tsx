@@ -19,7 +19,7 @@ export default function Index() {
         />
         <div className="ct-flex-col">
           <h1 className="text-slate-50 flex flex-col">Programación Web <span>Aprende <span className="bg-yellow-500 text-black px-2 rounded-sm">JS</span> y <span className="bg-[#149eca] text-slate-50 px-2 rounded-sm">React</span></span> <span>Francis[dev]</span></h1>
-          <p className="font-medium">Especializado en JavaScript y NextJS (React). Desarrollo de aplicaciones web modernas de alto rendimiento.</p>
+          <p>Especializado en JavaScript y NextJS (React). Desarrollo de aplicaciones web modernas de alto rendimiento.</p>
           <div className="ct-flex-row">
             <Link href="" className="btn-link">Contacto</Link>
             <Link href="" className="btn-link">Aprende</Link>
@@ -30,7 +30,7 @@ export default function Index() {
       <section className="section bg-background2">
         <div className="ct-flex-col h-full">
           <h2>Quiero colaborar en tu proyecto</h2>
-          <p className="font-medium">¿Necesitas un programador o tienes alguna duda?</p>
+          <p>¿Necesitas un programador o tienes alguna duda?</p>
           <div className="ct-flex-row">
             <a href="" target="_blank" className=""><LinkedinIcon /></a>
             <a href="" target="_blank" className=""><MailIcon /></a>

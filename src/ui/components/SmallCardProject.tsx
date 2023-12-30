@@ -6,7 +6,7 @@ export default function SmallCardProject({ project }: { project: DashProject }) 
     const { id, title, description, image_url, technologies } = project
 
     return (
-        <article className="min-h-max border-2 border-medium rounded-md overflow-hidden">
+        <article className="min-h-max rounded-md overflow-hidden shadow-[0_-25px_40px_-12px_rgba(0,0,0,0.25)] shadow-white/10">
             <img
                 src={`/project-images/${image_url}`}
                 alt=""
