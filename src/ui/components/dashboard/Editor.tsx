@@ -19,9 +19,9 @@ export default function Editor() {
     }, [nextPosition])
 
     return (
-        <div className="text-black flex flex-col gap-4 h-full">
-            <div className="flex flex-col flex-1">
-                <div className="w-full flex flex-row gap-2 mb-1">
+        <>
+            <div className="h-full flex flex-col flex-1">
+                <div className="w-full flex flex-row gap-2 mb-2 text-black">
                     <HeadingToolButton handleTools={handleTools} title="Heading" />
                     <ToolButton handleTools={handleTools} value="link" title="Link" icon={<LinkIcon />} />
                     <ToolButton handleTools={handleTools} value="quote" title="Quote" icon={<QuoteIcon />} />
@@ -32,10 +32,10 @@ export default function Editor() {
                     <ToolButton handleTools={handleTools} value="bold" title="Bold" icon={<BoldIcon />} />
                     <ToolButton handleTools={handleTools} value="italic" title="Italic" icon={<ItalicIcon />} />
                 </div>
-                <textarea ref={ref} value={markdown} onChange={handleChange} id="editor" name="description" placeholder="Enter description" className="w-full h-full rounded-md p-2 resize-none" />
+                <textarea ref={ref} value={markdown} onChange={handleChange} id="editor" name="description" placeholder="Enter description" className="w-full flex-1 rounded-md bg-background2 text-text p-2 resize-none" />
                 <input type="file" id="file" accept="image/*" size={500000} className="hidden"/>
             </div>
             <Preview markdown={markdown} />
-        </div>
+        </>
     )
 }

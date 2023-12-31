@@ -12,7 +12,7 @@ export default function HeadingToolButton({ handleTools, title }: { title: strin
     }
 
     return (
-        <div className="bg-slate-100 rounded-sm p-[2px] px-1 border border-black cursor-pointer relative" title={title} >
+        <div className="bg-slate-100 rounded-md p-[2px] px-1 border-2 border-text cursor-pointer relative" title={title} >
             <label htmlFor="heading-input" className="cursor-pointer h-full"><i className="h-full flex items-center"><HeadingIcon /></i></label>
             <input type="checkbox" id="heading-input" className="peer hidden"></input>
 

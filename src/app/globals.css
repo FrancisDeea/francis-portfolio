@@ -70,16 +70,11 @@
   }
 
   #projectForm {
-    @apply h-full flex flex-col gap-4;
+    @apply h-full flex flex-col gap-4 text-text;
 
     input:not([type="file"]) {
-      @apply w-full rounded-md text-black h-8 p-2;
-    }
-    input[type="submit"],
-    button.preview,
-    label.preview {
-      @apply bg-slate-400 hover:bg-slate-500 font-bold h-10 w-1/2 rounded-lg text-black max-w-xs;
-    }
+      @apply w-full rounded-md h-8 p-2 bg-background2 outline-slate-100;
+    }   
   }
 }
 
