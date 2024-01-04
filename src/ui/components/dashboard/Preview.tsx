@@ -17,7 +17,7 @@ export default function Preview({ markdown }: { markdown: string }) {
                 dangerouslySetInnerHTML={{ __html: marked.parse(markdown) }}
                 className="mt-5">
             </div>
-            <button type="button" onClick={handleDialog} className="absolute top-3 right-4"><CloseIcon /></button>
+            <button type="button" onClick={handleDialog} className="absolute top-3 right-4"><CloseIcon customClass={null} /></button>
         </dialog>
     )
 }
