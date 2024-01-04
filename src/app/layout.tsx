@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { montserrat } from '@/ui/fonts'
 import './globals.css'
+import Header from '@/ui/components/Header'
 
 export const metadata: Metadata = {
   title: 'Desarrollo Web Full Stack | Aprende Javascript y React | Francis[dev]',
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
+        <Header />
         {children}
       </body>
     </html>
