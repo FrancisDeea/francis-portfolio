@@ -6,10 +6,10 @@ export default async function Projects() {
     const projects = await fetchAllProjects()
 
     return (
-        <main>
+        <main className='max-lg:p-4 py-4'>
             <section className='ct-flex-col'>
                 <h1>Take a look at my latest project</h1>
-                <div className='custom-grid gap-8'>
+                <div className='custom-grid gap-8 max-md:gap-y-10'>
                     {
                         projects.map(project => {
                             return (

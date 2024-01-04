@@ -31,22 +31,6 @@
     );
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background1: 225deg 59% 11%;
-      --background2: 225deg 40% 18%;
-      --dark: 2 6 23;
-      --medium: 213deg 30% 32%;
-      --text: 213deg 51% 72%;
-      --alert: 358deg 100% 67%;
-      --gradient: linear-gradient(
-        90deg,
-        hsla(225, 59%, 8%, 1) 0%,
-        hsla(226, 58%, 12%, 1) 100%
-      );
-    }
-  }
-
   body {
     @apply bg-gradient text-text;
   }

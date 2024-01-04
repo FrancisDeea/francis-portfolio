@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { IconArticle, IconUser, IconLogout2, IconTrash, IconEye, IconEdit, IconHeading, IconH1, IconH2, IconH3, IconLink, IconBlockquote, IconCode, IconPhoto, IconList, IconListNumbers, IconBold, IconItalic, IconSquareX, IconPencilPlus, IconCategory } from '@tabler/icons-react';
+import { IconSun, IconMoon, IconArticle, IconUser, IconLogout2, IconTrash, IconEye, IconEdit, IconHeading, IconH1, IconH2, IconH3, IconLink, IconBlockquote, IconCode, IconPhoto, IconList, IconListNumbers, IconBold, IconItalic, IconSquareX, IconPencilPlus, IconCategory } from '@tabler/icons-react';
 
 export const PostIcon = () => <IconArticle size={22} />
 export const ProjectIcon = () => <IconUser size={22} />
@@ -22,6 +22,8 @@ export const ItalicIcon = () => <IconItalic size={16} />
 export const CloseIcon = ({ customClass }: { customClass: string | null }) => <IconSquareX size={30} className={`${customClass}`} />
 export const CreateIcon = () => <IconPencilPlus size={22} />
 export const MenuIcon = () => <IconCategory size={22} />
+export const SunIcon = ({ customClass }: { customClass: string | null }) => <IconSun size={22} className={`${customClass} animate-fade animate-duration-300`} />
+export const MoonIcon = ({ customClass }: { customClass: string | null }) => <IconMoon size={22} className={`${customClass} animate-fade animate-duration-300`} />
 
 export const TiktokIcon = () => {
     return (

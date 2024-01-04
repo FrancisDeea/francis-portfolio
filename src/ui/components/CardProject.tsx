@@ -17,7 +17,7 @@ export default function CardProject({ project }: { project: DashProject }) {
                 <div>
                     <h3 className="">{title}</h3>
                     <div className="h-min mt-1 flex gap-4 justify-start items-center font-light">
-                        {technologies.map(technologie => findIcon(technologie))}
+                        {technologies.map(technologie => <span key={technologie}>{findIcon(technologie)}</span>)}
                     </div>
                 </div>
                 <MDXRemote source={description} />
