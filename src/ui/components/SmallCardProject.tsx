@@ -14,7 +14,7 @@ export default function SmallCardProject({ project }: { project: DashProject }) 
             />
             <div className="h-[calc(100%-250px)] p-4 flex flex-col gap-4 justify-evenly bg-dark">
                 <div className="">
-                    <h3 className="font-semibold text-slate-100">{title}</h3>
+                    <h3 className="font-semibold text-tex2">{title}</h3>
                     <div className="h-min mt-1 flex gap-4 justify-start items-center font-light">
                         {technologies.map(technologie => findIcon(technologie))}
                     </div>

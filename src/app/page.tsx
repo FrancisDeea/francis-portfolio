@@ -18,7 +18,7 @@ export default function Index() {
 
         />
         <div className="ct-flex-col">
-          <h1 className="text-slate-50 flex flex-col">Programación Web <span>Aprende <span className="bg-yellow-500 text-black px-2 rounded-sm">JS</span> y <span className="bg-[#149eca] text-slate-50 px-2 rounded-sm">React</span></span> <span>Francis[dev]</span></h1>
+          <h1 className="text-text2 flex flex-col">Programación Web <span>Aprende <span className="bg-yellow-500 text-black px-2 rounded-sm">JS</span> y <span className="bg-[#149eca] text-slate-50 px-2 rounded-sm">React</span></span> <span>Francis[dev]</span></h1>
           <p>Especializado en JavaScript y NextJS (React). Desarrollo de aplicaciones web modernas de alto rendimiento.</p>
           <div className="ct-flex-row">
             <Link href="" className="btn-link">Contacto</Link>

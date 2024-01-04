@@ -4,16 +4,18 @@
 
 @layer base {
   :root {
-    --background1: 225deg 59% 11%;
-    --background2: 225deg 40% 18%;
-    --dark: 2 6 23;
-    --medium: 213deg 30% 32%;
-    --text: 213deg 51% 72%;
-    --alert: 358deg 100% 67%;
+    --background1: 221deg 86% 92%;
+    --background2: 222deg 81% 96%;
+    --dark: 205 223 255;
+    --medium: 222deg 100% 83%;
+    --text: 0deg 0% 0%;
+    --text2: 0deg 0% 15%;
+    --alert: 358deg 100% 27%;
+    --opposite: 0 0 0;
     --gradient: linear-gradient(
       90deg,
-      hsla(225, 59%, 8%, 1) 0%,
-      hsla(226, 58%, 12%, 1) 100%
+      rgb(216, 226, 251) 0%,
+      rgb(227, 234, 252) 100%
     );
   }
 
@@ -23,7 +25,9 @@
     --dark: 2 6 23;
     --medium: 213deg 30% 32%;
     --text: 213deg 51% 72%;
+    --text2: 213deg 51% 88%;
     --alert: 358deg 100% 67%;
+    --opposite: 255 255 255;
     --gradient: linear-gradient(
       90deg,
       hsla(225, 59%, 8%, 1) 0%,
@@ -42,15 +46,19 @@
 
   h2,
   h3 {
-    @apply text-slate-300;
+    @apply text-text2;
   }
 
   h3 {
-    @apply font-semibold text-2xl max-md:text-xl text-slate-50;
+    @apply font-semibold text-2xl max-md:text-xl text-text2;
   }
 
   p {
-    @apply text-lg md:text-xl;
+    @apply text-lg md:text-xl text-text;
+  }
+
+  svg {
+    @apply fill-opposite
   }
 
   #projectForm {

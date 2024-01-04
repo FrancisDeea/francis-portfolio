@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { SunIcon, MoonIcon } from "../icons"
 
-export default function ThemeSelector() {
+export default function ThemeSelector({ customClass }: { customClass: string | null }) {
     const [theme, setTheme] = useState<'dark' | 'light'>('dark')
 
     const handleTheme = () => {
@@ -28,7 +28,7 @@ export default function ThemeSelector() {
 
     return (
         <button
-            className="ct-flex-row gap-2 border py-1 px-2 rounded-md font-medium bg-medium text-sm"
+            className={`ct-flex-row gap-2 border-2 border-medium py-1 px-2 rounded-md font-medium bg-background2 text-sm text-opposite ${customClass}`}
             onClick={handleTheme}
         >
             Change theme: <SunIcon customClass={theme === 'dark' ? 'hidden' : 'block'} /> <MoonIcon customClass={theme === 'light' ? 'hidden' : 'block'} />
