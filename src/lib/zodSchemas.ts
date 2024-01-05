@@ -5,7 +5,7 @@ export const createProjectSchema = z.object({
   title: z.string({
     invalid_type_error: "Invalid project title",
   }),
-  image: z.string().regex(/^\/(\w+-\w+)+\.(webp|png|jpeg)/g, {
+  image: z.string().regex(/^\/(\w+-?\w+)+\.(webp|png|jpeg)/g, {
     message: "You have to specify a valid url",
   }),
   technologies: z.string().array().nonempty({

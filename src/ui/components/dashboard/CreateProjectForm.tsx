@@ -3,8 +3,8 @@
 import { createProject } from "@/lib/actions";
 import Editor from "./Editor";
 import { useFormStatus, useFormState } from "react-dom";
-import { useState } from "react";
 import useNotification from "@/hooks/useNotification";
+import { useEffect, useState } from "react";
 
 const Submit = () => {
     const { pending } = useFormStatus()
@@ -15,7 +15,7 @@ const Submit = () => {
 }
 
 export default function CreateProjectForm() {
-    const [toggle, setToggle] = useState(false)
+    const [file, setFile] = useState<string | null>(null)
     const [formState, formAction] = useFormState(createProject, null)
     useNotification(formState)
 
@@ -24,20 +24,29 @@ export default function CreateProjectForm() {
         preview.showModal()
     }
 
+    useEffect(() => {
+        const input = document.getElementById('image-file') as HTMLInputElement
+        function handleChange() {
+            const fileList = input.files
+            if (fileList && fileList[0]) {
+                setFile(fileList[0].name)
+            }
+        }
+
+        input.addEventListener('change', handleChange)
+        return () => input.removeEventListener('change', handleChange)
+    })
+
+
     return (
         <form id="projectForm" className="flex-1" action={formAction}>
 
             <input id="title_project" type="text" name="title" maxLength={255} placeholder="Enter project title" required />
 
-            <div className="flex gap-4 max-lg:flex-col w-full items-center">
-                <div className="flex flex-row items-center gap-2 max-lg:w-full">
-                    <label onClick={() => setToggle(true)} htmlFor="image-url" className={`btn-link max-lg:flex-1 py-1 text-center ${toggle ? "bg-black" : "bg-black/20 border-medium/40"}`}>Type url</label>
-                    <span>or</span>
-                    <label onClick={() => setToggle(false)} htmlFor="image-file" className={`btn-link max-lg:flex-1 py-1 text-center ${!toggle ? "bg-black" : "bg-black/20 border-medium/40"}`}>Upload file</label>
-                </div>
-
-                {toggle && <input id="image-url" type="text" name="main-image" maxLength={255} placeholder="Enter imagen&apos;project url" />}
-                {!toggle && <input id="image-file" type="file" name="main-image" className="p-0 w-full" />}
+            <div className="flex gap-4 w-full items-center">
+                <label htmlFor="image-file" className={`btn-link py-1 text-center`}>Upload image</label>
+                <span className="max-lg:text-sm">{!file ? 'Ninguna imagen seleccionada' : file}</span>
+                <input id="image-file" type="file" name="main-image" className="hidden" />
             </div>
 
             <input id="technologies_project" type="text" name="technologies" maxLength={200} placeholder="Enter technologies" required />
