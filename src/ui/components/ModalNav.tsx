@@ -33,7 +33,7 @@ export default function ModalNav() {
 
     return (
         <div className="md:hidden">
-            <label htmlFor="modalNav"><MenuIcon customClass="text-opposite" /></label>
+            <label htmlFor="modalNav"><MenuIcon style="text-opposite" /></label>
             <input id="modalNav" type="checkbox" className="hidden peer" />
 
             <div
@@ -43,7 +43,7 @@ export default function ModalNav() {
                     animate-fade-up animate-duration-100 animate-ease-in-out 
                     peer-checked:flex"
             >
-                <label htmlFor="modalNav" className="cursor-pointer"><CloseIcon customClass="absolute right-5 top-5 text-opposite" /></label>
+                <label htmlFor="modalNav" className="cursor-pointer"><CloseIcon style="absolute right-5 top-5 text-opposite" /></label>
 
                 <div className="ct-flex-col gap-1 text-text2">
                     <span className="text-xl font-semibold">Francisco Javier Bernal</span>

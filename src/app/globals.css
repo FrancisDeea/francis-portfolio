@@ -76,7 +76,7 @@
   }
 
   .btn-link {
-    @apply rounded-md py-2 px-3 font-medium bg-background1 border-2 border-medium hover:bg-alert/30 hover:text-slate-50 w-max;
+    @apply rounded-md py-2 px-3 font-medium bg-background1 border-2 border-medium hover:bg-alert/30 w-max;
   }
 
   .ct-flex-col {
