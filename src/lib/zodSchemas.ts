@@ -8,6 +8,12 @@ export const createProjectSchema = z.object({
   image: z.string().regex(/^\/(\w+-?\w+)+\.(webp|png|jpeg)/g, {
     message: "You have to specify a valid url",
   }),
+  live: z.string().url({
+    message: "You have to specify a valid live url",
+  }),
+  github: z.string().url({
+    message: "You have to specify a valid github url",
+  }),
   technologies: z.string().array().nonempty({
     message: "You have to specify at least one technology",
   }),

@@ -4,7 +4,6 @@ import { LinkedinIcon, MailIcon, GithubIcon } from "@/ui/icons";
 import LastProjects from "@/ui/components/LastProjects";
 import LatestPosts from "@/ui/components/LatestPosts";
 import SocialSection from "@/ui/components/SocialSection";
-import { revalidatePath } from "next/cache";
 
 export default function Index() {
   return (

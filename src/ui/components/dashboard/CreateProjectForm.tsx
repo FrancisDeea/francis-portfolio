@@ -42,6 +42,8 @@ export default function CreateProjectForm() {
         <form id="projectForm" className="flex-1" action={formAction}>
 
             <input id="title_project" type="text" name="title" maxLength={255} placeholder="Enter project title" required />
+            <input id="live_url_project" type="text" name="live_url" maxLength={255} placeholder="Enter project live url" required />
+            <input id="github_url_project" type="text" name="github_url" maxLength={255} placeholder="Enter project github url" required />
 
             <div className="flex gap-4 w-full items-center">
                 <label htmlFor="image-file" className={`btn-link py-1 text-center`}>Upload image</label>

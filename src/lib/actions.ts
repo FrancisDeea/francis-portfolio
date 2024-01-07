@@ -22,7 +22,10 @@ export async function createProject(prevState: any, formData: FormData) {
     const checkedName = image.name.replaceAll(" ", "-");
 
     try {
-      await writeFile(`public/project-images/${checkedName}`, Buffer.from(buffer));
+      await writeFile(
+        `public/project-images/${checkedName}`,
+        Buffer.from(buffer)
+      );
       urlImageRawData = `/${checkedName}`;
     } catch (err) {
       console.error(err);
@@ -31,7 +34,9 @@ export async function createProject(prevState: any, formData: FormData) {
     urlImageRawData = imageRawData.toString();
   }
 
-  const technologiesRawData = (formData.get("technologies") as string).toString();
+  const technologiesRawData = (
+    formData.get("technologies") as string
+  ).toString();
   const technologiesToArray: string[] = technologiesRawData
     ?.replace(/\s*,\s*/g, ",")
     .replace(/^,*|,*$/g, "")
@@ -41,13 +46,17 @@ export async function createProject(prevState: any, formData: FormData) {
   const validatedFormData = createProjectSchema.safeParse({
     title: formData.get("title"),
     image: urlImageRawData,
+    live: formData.get("live_url"),
+    github: formData.get("github_url"),
     technologies: technologiesToArray,
     description: formData.get("description"),
   });
 
   if (!validatedFormData.success) {
     return {
-      message: JSON.stringify(Object.values(validatedFormData.error.flatten().fieldErrors).join(", ")),
+      message: JSON.stringify(
+        Object.values(validatedFormData.error.flatten().fieldErrors).join(", ")
+      ),
       status: "error",
     };
   }
