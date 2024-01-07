@@ -1,5 +1,4 @@
 import CreateProjectForm from "@/ui/components/dashboard/CreateProjectForm"
-import Editor from "@/ui/components/dashboard/Editor"
 
 export default function Create() {
     return (
