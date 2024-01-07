@@ -4,6 +4,7 @@ import { LinkedinIcon, MailIcon, GithubIcon } from "@/ui/icons";
 import LastProjects from "@/ui/components/LastProjects";
 import LatestPosts from "@/ui/components/LatestPosts";
 import SocialSection from "@/ui/components/SocialSection";
+import { cairoPlay } from "@/ui/fonts";
 
 export default function Index() {
   return (
@@ -49,13 +50,17 @@ export default function Index() {
           <h2>Quiero colaborar en tu proyecto</h2>
           <p>¿Necesitas un programador o tienes alguna duda?</p>
           <div className="ct-flex-row">
-            <a href="" target="_blank" className="">
+            <a
+              href="https://www.linkedin.com/in/francis-bernal-full-stack-developer/"
+              target="_blank"
+              className="hover:scale-110 transition-transform"
+            >
               <LinkedinIcon style="w-8 h-8" />
             </a>
-            <a href="" target="_blank" className="">
+            <a href="mailto:francisbernal14@gmail.com" target="_blank" className="hover:scale-110 transition-transform">
               <MailIcon style="w-10 h-10" />
             </a>
-            <a href="" target="_blank" className="">
+            <a href="https://github.com/FrancisDeea" target="_blank" className="hover:scale-110 transition-transform">
               <GithubIcon style="w-10 h-10" />
             </a>
           </div>

@@ -9,7 +9,7 @@ export default async function LastProjects() {
         <section className="section bg-background2 col-span-full">
             <div className="ct-flex-col">
                 <h2 className="">Take a look at my latest project</h2>
-                <div className="custom-grid">
+                <div className="custom-grid gap-6">
                     {
                         projects.map(project => {
                             return <SmallCardProject project={project} key={project.id} />

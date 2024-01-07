@@ -7,7 +7,7 @@
     --background1: 221deg 86% 92%;
     --background2: 222deg 81% 96%;
     --dark: 205 223 255;
-    --medium: 222deg 100% 70%;
+    --medium: 222deg 100% 75%;
     --text: 0deg 0% 0%;
     --text2: 0deg 0% 15%;
     --alert: 358deg 100% 27%;
@@ -41,7 +41,7 @@
 
   h1,
   h2 {
-    @apply font-bold text-3xl max-md:text-2xl;
+    @apply font-semibold text-3xl max-md:text-2xl;
   }
 
   h2,
@@ -54,11 +54,11 @@
   }
 
   p {
-    @apply text-lg md:text-xl text-text;
+    @apply text-lg text-text;
   }
 
   svg {
-    @apply fill-opposite
+    @apply fill-opposite;
   }
 
   #projectForm {
@@ -66,17 +66,17 @@
 
     input:not([type="file"]) {
       @apply w-full rounded-md h-8 p-2 bg-background2 outline-slate-100;
-    }   
+    }
   }
 }
 
 @layer components {
   .btn-social {
-    @apply rounded-md py-2 px-3 border-2 w-2/3 m-auto font-bold text-slate-50 text-lg text-center hover:scale-105 transition-transform;
+    @apply rounded-md py-2 px-3 border-2 w-2/3 m-auto font-semibold text-slate-50 text-lg text-center hover:scale-110 transition-transform;
   }
 
   .btn-link {
-    @apply rounded-md py-2 px-3 font-medium bg-background1 border-2 border-medium hover:bg-alert/30 w-max;
+    @apply rounded-md py-2 px-3 font-semibold bg-background1 border-2 border-medium hover:bg-medium w-max transition-all;
   }
 
   .ct-flex-col {
@@ -134,7 +134,9 @@ main {
 
 h1,
 h2,
-h3,
+h3 {
+  text-wrap: balance;
+}
 p {
   text-wrap: pretty;
 }
@@ -153,7 +155,6 @@ code {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-flow: row;
-  gap: 1rem;
 }
 
 @media (min-width: 1024px) {

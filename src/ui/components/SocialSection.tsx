@@ -2,7 +2,7 @@ export default function SocialSection() {
 
     return (
         <section className="section bg-background2 ct-flex-col justify-evenly">
-            <h2>Learn short video lessons about programming web</h2>
+            <h2>Learn short video lessons about web programming</h2>
             <div className="ct-flex-col w-full">
                 <a href="" className="btn-social tiktok-style">TikTok</a>
                 <a href="" className="btn-social instagram-style">Instagram</a>

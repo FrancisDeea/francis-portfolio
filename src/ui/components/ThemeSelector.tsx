@@ -36,10 +36,9 @@ export default function ThemeSelector({
 
   return (
     <button
-      className={`ct-flex-row gap-2 border-2 border-medium py-1 px-2 rounded-md font-medium bg-background2 text-sm text-opposite ${customClass}`}
+      className={`p-1 rounded-full bg-background2 text-opposite ${customClass}`}
       onClick={handleTheme}
     >
-      Change theme:
       <SunIcon style={theme === "dark" ? "hidden" : "block"} />
       <MoonIcon style={theme === "light" ? "hidden" : "block"} />
     </button>

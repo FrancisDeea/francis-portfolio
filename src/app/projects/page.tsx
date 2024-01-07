@@ -9,7 +9,7 @@ export default async function Projects() {
         <main className='max-lg:p-4 py-4'>
             <section className='ct-flex-col'>
                 <h1>Take a look at my latest project</h1>
-                <div className='custom-grid gap-8 max-md:gap-y-10'>
+                <div className='custom-grid gap-x-8 gap-y-12 max-md:gap-y-10'>
                     {
                         projects.map(project => {
                             return (

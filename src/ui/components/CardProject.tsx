@@ -8,7 +8,7 @@ export default function CardProject({ project }: { project: Project }) {
     project;
 
   return (
-    <article className="section bg-dark p-0 min-h-max overflow-hidden">
+    <article className="section rounded-md bg-dark p-0 min-h-max overflow-hidden">
       <img
         src={`/project-images/${image_url}`}
         alt=""
