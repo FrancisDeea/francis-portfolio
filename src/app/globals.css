@@ -61,7 +61,8 @@
     @apply fill-opposite;
   }
 
-  #projectForm, #postForm {
+  #projectForm,
+  #postForm {
     @apply h-full flex flex-col gap-4 text-text;
 
     input:not([type="file"]):not([type="checkbox"]) {

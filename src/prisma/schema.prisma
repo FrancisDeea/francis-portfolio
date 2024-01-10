@@ -17,7 +17,7 @@ model Post {
     image       String?
     createdAt   DateTime @default(now()) @map("createdat")
     category    Category @relation(fields: [categoryId], references: [id])
-    categoryId  Int @map("categoryid")
+    categoryId  Int      @map("categoryid")
 
     @@map("posts")
 }
