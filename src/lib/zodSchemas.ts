@@ -28,3 +28,21 @@ export const createProjectSchema = z.object({
 export const imageServerSchema = zfd.formData({
   image: zfd.file(),
 });
+
+export const createPostSchema = z.object({
+  title: z.string({
+    invalid_type_error: "Invalid project title",
+  }),
+  short_description: z.string({
+    invalid_type_error: "Invalid short description",
+  }),
+  hashtags: z.string().regex(/^\#\w+/).array().nonempty({
+    message: "You have tu speficy one hashtag at least"
+  }),
+  image: z.string().regex(/^\/(\w+-?\w+)+\.(webp|png|jpeg)/g, {
+    message: "You have to specify a valid url",
+  }),
+  description: z.string({
+    invalid_type_error: "Invalid description",
+  }),
+});

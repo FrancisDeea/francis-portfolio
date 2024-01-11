@@ -32,7 +32,7 @@ export default function Editor() {
                     <ToolButton handleTools={handleTools} value="bold" title="Bold" icon={<BoldIcon style="w-4 h-4" />} />
                     <ToolButton handleTools={handleTools} value="italic" title="Italic" icon={<ItalicIcon style="w-4 h-4" />} />
                 </div>
-                <textarea ref={ref} value={markdown} onChange={handleChange} id="editor" name="description" placeholder="Enter description" className="w-full flex-1 rounded-md bg-background2 text-text p-2 resize-none" />
+                <textarea ref={ref} value={markdown} onChange={handleChange} id="editor" name="description" placeholder="Enter description" className="w-full flex-1 min-h-[200px] rounded-md bg-background2 text-text p-2 resize-none" />
                 <input type="file" id="file" accept="image/*" size={500000} className="hidden"/>
             </div>
             <Preview markdown={markdown} />

@@ -1,13 +1,20 @@
 "use server";
 
+import { PrismaClient } from "@prisma/client";
 import { sql } from "@vercel/postgres";
-import { technologiesToPSQLArray } from "./utils";
+import { technologiesToPSQLArray, cleanString } from "./utils";
 
-import { createProjectSchema, imageServerSchema } from "./zodSchemas";
+import {
+  createPostSchema,
+  createProjectSchema,
+  imageServerSchema,
+} from "./zodSchemas";
 import { writeFile } from "node:fs/promises";
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+
+const prisma = new PrismaClient();
 
 export async function createProject(prevState: any, formData: FormData) {
   const imageRawData = formData.get("main-image");
@@ -91,4 +98,87 @@ export async function deleteProject(id: string) {
   }
   revalidatePath("/dashboard/projects");
   revalidatePath("/projects");
+}
+
+export async function createPost(prevState: any, formData: FormData) {
+  const categoryId = Number(formData.get("category"));
+  const hashtagsRawData = formData.get("hashtags") as string;
+  const imageRawData = formData.get("main-image");
+  let urlImageRawData = null;
+
+  if (typeof imageRawData !== "string") {
+    const formData = new FormData();
+    formData.append("image", imageRawData as File);
+    const { image } = imageServerSchema.parse(formData);
+
+    const buffer = await image.arrayBuffer();
+    const checkedName = image.name.replaceAll(" ", "-");
+
+    try {
+      await writeFile(`public/post-images/${checkedName}`, Buffer.from(buffer));
+      urlImageRawData = `/${checkedName}`;
+    } catch (err) {
+      console.error(err);
+    }
+  } else {
+    urlImageRawData = imageRawData.toString();
+  }
+
+  const validatedFormData = createPostSchema.safeParse({
+    title: formData.get("title"),
+    short_description: formData.get("short_description"),
+    hashtags: cleanString(hashtagsRawData).split(","),
+    image: urlImageRawData,
+    description: formData.get("description"),
+  });
+
+  if (!validatedFormData.success) {
+    return {
+      message: JSON.stringify(
+        Object.values(validatedFormData.error.flatten().fieldErrors).join(", ")
+      ),
+      status: "error",
+    };
+  }
+
+  const { title, short_description, hashtags, image, description } =
+    validatedFormData.data;
+
+  try {
+    await prisma.post.create({
+      data: {
+        title: title,
+        description: short_description,
+        hashtags: hashtags,
+        content: description,
+        image: image,
+        categoryId: categoryId,
+      },
+    });
+  } catch (err) {
+    console.error(err);
+    return {
+      message: JSON.stringify(`Failed to save project in DDBB: ${err.code}`),
+      status: "error",
+    };
+  }
+
+  revalidatePath("/dashboard/posts");
+  redirect("/dashboard/posts");
+}
+
+export async function deletePost(id: number) {
+  try {
+    await prisma.post.delete({
+      where: {
+        id: id,
+      },
+    });
+  } catch (err) {
+    console.error(err);
+    throw new Error(
+      JSON.stringify(`Failed to delete project in DDBB: ${err.code}`)
+    );
+  }
+  revalidatePath("/dashboard/posts");
 }

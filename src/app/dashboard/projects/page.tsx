@@ -7,7 +7,7 @@ export default async function Projects() {
     const projects = await fetchAllProjects()
 
     return (
-        <section className="section w-full">
+        <section className="section w-full overflow-y-scroll scrollbar-hide">
             <div className="ct-flex-row justify-between items-end mb-4">
                 <h1 className="">Francis&apos;s Projects</h1>
                 <NavButton path="/dashboard/projects/create" value="Create project" icon={<CreateIcon />} customStyle="w-max" />

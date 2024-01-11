@@ -22,3 +22,8 @@ export const fetchAllCategories = async () => {
   const categories = await prisma.category.findMany()
   return categories
 }
+
+export const fetchAllPosts = async () => {
+  const posts = await prisma.post.findMany()
+  return posts
+}

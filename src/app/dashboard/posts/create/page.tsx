@@ -6,7 +6,7 @@ export default async function Create() {
   const categories: Category[] = await fetchAllCategories();
 
   return (
-    <section className="section w-full min-h-[calc(100vh-6rem)] ct-flex-col">
+    <section className="section w-full h-full ct-flex-col">
       <h1 className="">Create a new post</h1>
       <CreatePostForm categories={categories} />
     </section>

@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import { createProject } from "@/lib/actions";
+import { createPost } from "@/lib/actions";
 import Editor from "./Editor";
 import { useFormStatus, useFormState } from "react-dom";
 import useNotification from "@/hooks/useNotification";
@@ -25,7 +25,7 @@ const Submit = () => {
 
 export default function CreatePostForm({ categories }: {categories: Category[]}) {
   const [file, setFile] = useState<string | null>(null);
-  const [formState, formAction] = useFormState(createProject, null);
+  const [formState, formAction] = useFormState(createPost, null);
   useNotification(formState);
 
   const handlePreview = () => {
@@ -36,7 +36,7 @@ export default function CreatePostForm({ categories }: {categories: Category[]})
   };
 
   useEffect(() => {
-    const input = document.getElementById("image-file") as HTMLInputElement;
+    const input = document.getElementById("image-post") as HTMLInputElement;
     function handleChange() {
       const fileList = input.files;
       if (fileList && fileList[0]) {
@@ -49,7 +49,7 @@ export default function CreatePostForm({ categories }: {categories: Category[]})
   });
 
   return (
-    <form id="postForm" className="flex-1" action={formAction}>
+    <form id="postForm" className="" action={formAction}>
       <input
         type="text"
         name="title"
@@ -59,7 +59,7 @@ export default function CreatePostForm({ categories }: {categories: Category[]})
       />
       <input
         type="text"
-        name="description"
+        name="short_description"
         maxLength={200}
         placeholder="Enter short description post"
         required
@@ -73,14 +73,14 @@ export default function CreatePostForm({ categories }: {categories: Category[]})
       />
 
       <div className="flex gap-4 w-full items-center">
-        <label htmlFor="image-file" className={`btn-link py-1 text-center`}>
+        <label htmlFor="image-post" className={`btn-link py-1 text-center max-lg:text-sm`}>
           Upload image
         </label>
         <span className="max-lg:text-sm">
           {!file ? "Ninguna imagen seleccionada" : file}
         </span>
         <input
-          id="image-file"
+          id="image-post"
           type="file"
           name="main-image"
           className="hidden"

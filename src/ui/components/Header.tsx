@@ -5,7 +5,7 @@ import ThemeSelector from './ThemeSelector'
 
 export default function Header() {
     return (
-        <header className="section p-2 bg-medium border-none font-semibold rounded-md w-[calc(100%-2rem)] max-w-[1200px] m-auto mt-4 ct-flex-row justify-evenly">
+        <header className="section bg-medium border-none font-semibold rounded-md h-12 w-[calc(100%-2rem)] max-w-[1200px] m-auto mt-4 ct-flex-row justify-evenly">
             <Link href="/" className='text-opposite'>&lt;FrancisBernal /&gt;</Link>
             <Nav customClass="max-md:hidden" handleModal={undefined} />
             <ThemeSelector customClass="max-md:hidden" />
