@@ -1,6 +1,6 @@
 import { Category } from "@prisma/client";
 
-export function Categories({ categories }: { categories: Category[] }) {
+export default function Categories({ categories }: { categories: Category[] }) {
   return (
     <div>
       <span>Selecciona una categoria:</span>

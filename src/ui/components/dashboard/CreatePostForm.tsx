@@ -1,11 +1,13 @@
-'use client'
+"use client";
 
 import { createPost } from "@/lib/actions";
-import Editor from "./Editor";
+
+import { useEffect, useState } from "react";
 import { useFormStatus, useFormState } from "react-dom";
 import useNotification from "@/hooks/useNotification";
-import { useEffect, useState } from "react";
-import { Categories } from "./Categories";
+
+import Editor from "./Editor";
+import Categories from "./Categories";
 import { Category } from "@prisma/client";
 
 const Submit = () => {
@@ -23,7 +25,11 @@ const Submit = () => {
   );
 };
 
-export default function CreatePostForm({ categories }: {categories: Category[]}) {
+export default function CreatePostForm({
+  categories,
+}: {
+  categories: Category[];
+}) {
   const [file, setFile] = useState<string | null>(null);
   const [formState, formAction] = useFormState(createPost, null);
   useNotification(formState);
@@ -73,7 +79,10 @@ export default function CreatePostForm({ categories }: {categories: Category[]})
       />
 
       <div className="flex gap-4 w-full items-center">
-        <label htmlFor="image-post" className={`btn-link py-1 text-center max-lg:text-sm`}>
+        <label
+          htmlFor="image-post"
+          className={`btn-link py-1 text-center max-lg:text-sm`}
+        >
           Upload image
         </label>
         <span className="max-lg:text-sm">

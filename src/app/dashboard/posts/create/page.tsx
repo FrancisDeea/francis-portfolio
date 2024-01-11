@@ -1,6 +1,7 @@
-import CreatePostForm from "@/ui/components/dashboard/CreatePostForm";
 import { fetchAllCategories } from "@/lib/dbdata";
 import { Category } from "@prisma/client";
+
+import CreatePostForm from "@/ui/components/dashboard/CreatePostForm";
 
 export default async function Create() {
   const categories: Category[] = await fetchAllCategories();
