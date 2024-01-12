@@ -19,11 +19,22 @@ export const fetchLastProject = async (number: number) => {
 };
 
 export const fetchAllCategories = async () => {
-  const categories = await prisma.category.findMany()
-  return categories
-}
+  const categories = await prisma.category.findMany();
+  return categories;
+};
 
 export const fetchAllPosts = async () => {
-  const posts = await prisma.post.findMany()
-  return posts
-}
+  const posts = await prisma.post.findMany();
+  return posts;
+};
+
+export const fetchPostsByCategory = async (name: string) => {
+  const posts = await prisma.post.findMany({
+    where: {
+      category: {
+        name: name,
+      },
+    },
+  });
+  return posts;
+};

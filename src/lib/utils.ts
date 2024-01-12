@@ -1,4 +1,5 @@
 import { uploadFile } from "@/services/projectServices";
+import { Post } from "@prisma/client";
 
 export async function handleSelected() {
   const input = document.getElementById("file") as HTMLInputElement;
@@ -40,4 +41,14 @@ export function cleanString(str: string): string {
     .replace(/\s*,\s*/g, ",")
     .replace(/^,*|,*$/g, "")
     .replace(/,+/g, ",");
+}
+
+export function getSlug(str: string): string {
+  return str.toLowerCase().replaceAll(" ", "");
+}
+
+export function findByTitle(arr: Post[], slug: string): Post | undefined {
+  return arr.find(
+    (post) => post.title.toLowerCase() === slug.replaceAll("-", " ")
+  );
 }
