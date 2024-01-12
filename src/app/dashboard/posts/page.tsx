@@ -1,12 +1,11 @@
-import { fetchAllPosts } from "@/lib/dbdata";
+import { CreateIcon } from "@/ui/icons";
+import { Suspense } from "react";
 
 import NavButton from "@/ui/components/NavButton";
-import DashPostCard from "@/ui/components/dashboard/DashPostCard";
-import { CreateIcon } from "@/ui/icons";
+import Posts from "@/ui/components/dashboard/Posts";
+import Skeleton from "@/ui/skeletons/dashboard/Posts";
 
-export default async function Posts() {
-  const posts = await fetchAllPosts();
-
+export default async function Page() {
   return (
     <section className="section w-full overflow-y-scroll scrollbar-hide">
       <div className="ct-flex-row justify-between items-end mb-4">
@@ -19,11 +18,9 @@ export default async function Posts() {
         />
       </div>
 
-      <div className="ct-flex-col">
-        {posts.map((post) => {
-          return <DashPostCard key={post.id} post={post} />;
-        })}
-      </div>
+      <Suspense fallback={<Skeleton />}>
+        <Posts />
+      </Suspense>
     </section>
   );
 }

@@ -95,6 +95,10 @@
   .no-scrollbar:-moz-scrollbar {
     display: none;
   }
+
+  .skeleton {
+    @apply h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-full
+  }
 }
 
 @layer utilities {
