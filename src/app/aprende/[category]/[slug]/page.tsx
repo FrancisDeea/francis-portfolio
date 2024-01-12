@@ -10,13 +10,9 @@ export async function generateStaticParams({
   params: { category: string };
 }) {
   const posts = await fetchPostsByCategory(category);
-
-  return posts.map((post) => {
-    const slug = getSlug(post.title);
-    return {
-      slug: slug,
-    };
-  });
+  return posts.map((post) => ({
+    slug: getSlug(post.title),
+  }));
 }
 
 export default async function Page({
