@@ -2,6 +2,8 @@ import { fetchPostsByCategory } from "@/lib/dbdata";
 import { findByTitle, getSlug } from "@/lib/utils";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams({
   params: { category },
 }: {
@@ -22,7 +24,7 @@ export default async function Page({
 }: {
   params: { slug: string; category: string };
 }) {
-  console.log(slug)
+  console.log(slug);
   const posts = await fetchPostsByCategory(category);
   const post = findByTitle(posts, slug);
 
