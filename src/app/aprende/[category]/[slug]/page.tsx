@@ -22,6 +22,7 @@ export default async function Page({
 }: {
   params: { slug: string; category: string };
 }) {
+  console.log(slug)
   const posts = await fetchPostsByCategory(category);
   const post = findByTitle(posts, slug);
 
