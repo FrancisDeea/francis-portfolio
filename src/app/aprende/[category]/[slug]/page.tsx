@@ -3,7 +3,7 @@ import { findByTitle, getSlug } from "@/lib/utils";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 
-export async function geterateStaticParams({
+export async function generateStaticParams({
   params: { category },
 }: {
   params: { category: string };
