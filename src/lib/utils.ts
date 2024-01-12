@@ -44,7 +44,7 @@ export function cleanString(str: string): string {
 }
 
 export function getSlug(str: string): string {
-  return str.toLowerCase().replaceAll(" ", "");
+  return str.toLowerCase().replaceAll(" ", "-");
 }
 
 export function findByTitle(arr: Post[], slug: string): Post | undefined {
