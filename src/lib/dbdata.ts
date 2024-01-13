@@ -23,6 +23,15 @@ export const fetchAllCategories = async () => {
   return categories;
 };
 
+export const fetchCategoryById = async (id: number) => {
+  const category = await prisma.category.findUnique({
+    where: {
+      id: id,
+    },
+  });
+  return category?.name;
+};
+
 export const fetchAllPosts = async () => {
   const posts = await prisma.post.findMany();
   return posts;
@@ -42,7 +51,7 @@ export const fetchAllPosts = async () => {
 export const fetchPostsByCategory = async (id: string) => {
   const posts = await prisma.post.findMany({
     where: {
-      categoryId: Number(id)
+      categoryId: Number(id),
     },
   });
   return posts;

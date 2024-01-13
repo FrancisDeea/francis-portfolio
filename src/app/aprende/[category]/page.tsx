@@ -6,7 +6,7 @@ export async function generateStaticParams() {
   const categories = await fetchAllCategories();
 
   return categories.map((category) => ({
-    category: category.id.toString(),
+    category: category.name,
   }));
 }
 
