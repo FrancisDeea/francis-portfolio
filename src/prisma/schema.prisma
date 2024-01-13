@@ -9,15 +9,15 @@ datasource db {
 }
 
 model Post {
-    id          Int      @id @default(autoincrement())
-    title       String   @unique @db.VarChar(120)
-    description String   @unique @db.VarChar(200)
-    hashtags    String[]
-    content     String
-    image       String?
-    createdAt   DateTime @default(now()) @map("createdat")
-    category    Category @relation(fields: [categoryId], references: [id])
-    categoryId  Int      @map("categoryid")
+    id            Int      @id @default(autoincrement())
+    title         String   @unique @db.VarChar(120)
+    description   String   @unique @db.VarChar(200)
+    hashtags      String[]
+    content       String
+    image         String?
+    createdAt     DateTime @default(now()) @map("createdat")
+    category      Category @relation(fields: [category_name], references: [name])
+    category_name String   @db.VarChar(25)
 
     @@map("posts")
 }

@@ -1,21 +1,13 @@
-import {
-  fetchAllPosts,
-  fetchCategoryById,
-  fetchPostsByCategory,
-} from "@/lib/dbdata";
+import { fetchAllPosts, fetchPostsByCategory } from "@/lib/dbdata";
 import { findByTitle, getSlug } from "@/lib/utils";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 export const dynamicParams = false;
 
-export async function generateStaticParams({
-  params: { category },
-}: {
-  params: { category: string };
-}) {
-  const posts = await fetchPostsByCategory(category);
+export async function generateStaticParams() {
+  const posts = await fetchAllPosts();
   return posts.map((post) => ({
-    category: category,
+    category: post.category_name,
     slug: getSlug(post.title),
   }));
 }

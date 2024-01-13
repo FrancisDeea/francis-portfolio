@@ -40,9 +40,7 @@ export const fetchAllPosts = async () => {
 export const fetchPostsByCategory = async (name: string) => {
   const posts = await prisma.post.findMany({
     where: {
-      category: {
-        name: name,
-      },
+      category_name: name,
     },
   });
   return posts;
