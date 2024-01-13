@@ -11,7 +11,7 @@ export default function Categories({ categories }: { categories: Category[] }) {
               <input
                 type="radio"
                 name="category"
-                value={category.id}
+                value={category.name}
                 id={category.name}
                 className="peer hidden"
               />

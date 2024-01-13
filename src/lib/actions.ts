@@ -101,7 +101,7 @@ export async function deleteProject(id: string) {
 }
 
 export async function createPost(prevState: any, formData: FormData) {
-  const categoryId = Number(formData.get("category"));
+  const categoryName = formData.get("category") as string;
   const hashtagsRawData = formData.get("hashtags") as string;
   const imageRawData = formData.get("main-image");
   let urlImageRawData = null;
@@ -152,7 +152,7 @@ export async function createPost(prevState: any, formData: FormData) {
         hashtags: hashtags,
         content: description,
         image: image,
-        categoryId: categoryId,
+        category_name: categoryName,
       },
     });
   } catch (err) {
