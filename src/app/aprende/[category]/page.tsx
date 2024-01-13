@@ -13,7 +13,7 @@ export const dynamicParams = false
 export default function Page({
   params: { category },
 }: {
-  params: { category: string };
+  params: { category: number };
 }) {
   return <h1>{category}</h1>;
 }
