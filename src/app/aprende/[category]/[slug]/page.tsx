@@ -11,9 +11,7 @@ export async function generateStaticParams({
   params: { category: string };
 }) {
   const posts = await fetchPostsByCategory(category);
-  return posts.map((post) => ({
-    slug: getSlug(post.title),
-  }));
+  return [{slug: "que-son-los-heading-y-como-usarlos"}];
 }
 
 export default async function Page({
