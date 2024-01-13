@@ -11,6 +11,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function Page() {
+export default function Page({
+  params: category,
+}: {
+  params: { category: string };
+}) {
   return <h1>Hello World</h1>;
 }

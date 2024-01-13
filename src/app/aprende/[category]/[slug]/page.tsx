@@ -8,10 +8,11 @@ export { dynamicParams };
 export async function generateStaticParams({
   params: { category },
 }: {
-  params: { category: string };
+  params: { category: string }
 }) {
+  console.log(category)
   const posts = await fetchPostsByCategory(category);
-  return [{slug: "que-son-los-heading-y-como-usarlos"}];
+  return [{slug: "que"}];
 }
 
 export default async function Page({
