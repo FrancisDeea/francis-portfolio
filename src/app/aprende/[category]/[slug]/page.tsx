@@ -1,5 +1,6 @@
 import { fetchAllPosts, fetchPostsByCategory } from "@/lib/dbdata";
 import { findByTitle, getSlug } from "@/lib/utils";
+import { HtmlIcon } from "@/ui/icons";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 export const dynamicParams = false;
@@ -24,11 +25,18 @@ export default async function Page({
   if (post)
     return (
       <main className="max-lg:p-4 py-4 max-w-4xl">
-        <article className="section rounded-md">
-          <header className="mb-6">
-            <h1>{post.title}</h1>
-            <span className="">{post.createdAt.toLocaleDateString()}</span>
-            <p className="mt-2">{post.description}</p>
+        <article id="post" className="section border-2 rounded-md">
+          <header className="mb-4 ct-flex-col">
+            <h1 className="mb-1">{post.title}</h1>
+            <div className="text-sm ct-flex-col gap-1 lg:ct-flex-row lg:justify-start">
+              <span className="flex flex-row items-center gap-1 rounded-full border border-medium px-3 py-1 w-fit font-medium bg-dark">
+                <HtmlIcon size={5} /> Estás aprendiendo HTML
+              </span>
+              <span className="">
+                Fecha creación: {post.createdAt.toLocaleDateString()}
+              </span>
+            </div>
+            <p className="text-opposite">{post.description}</p>
           </header>
           <div className="">
             <MDXRemote source={post.content} />

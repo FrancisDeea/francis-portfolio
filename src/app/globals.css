@@ -69,6 +69,12 @@
       @apply w-full rounded-md h-8 p-2 bg-background2 outline-slate-100;
     }
   }
+
+  #post {
+    p {
+      @apply text-opposite
+    }
+  }
 }
 
 @layer components {
