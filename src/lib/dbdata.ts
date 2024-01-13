@@ -37,22 +37,22 @@ export const fetchAllPosts = async () => {
   return posts;
 };
 
-// export const fetchPostsByCategory = async (name: string) => {
-//   const posts = await prisma.post.findMany({
-//     where: {
-//       category: {
-//         name: name,
-//       },
-//     },
-//   });
-//   return posts;
-// };
-
-export const fetchPostsByCategory = async (id: string) => {
+export const fetchPostsByCategory = async (name: string) => {
   const posts = await prisma.post.findMany({
     where: {
-      categoryId: Number(id),
+      category: {
+        name: name,
+      },
     },
   });
   return posts;
 };
+
+// export const fetchPostsByCategory = async (id: string) => {
+//   const posts = await prisma.post.findMany({
+//     where: {
+//       categoryId: Number(id),
+//     },
+//   });
+//   return posts;
+// };
