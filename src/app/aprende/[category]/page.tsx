@@ -1,7 +1,6 @@
 import { fetchAllCategories } from "@/lib/dbdata";
 
-const dynamicParams = false;
-export { dynamicParams };
+export const dynamic = 'force-static'
 
 export async function generateStaticParams() {
   const categories = await fetchAllCategories();
@@ -12,9 +11,9 @@ export async function generateStaticParams() {
 }
 
 export default function Page({
-  params: category,
+  params: { category },
 }: {
   params: { category: string };
 }) {
-  return <h1>Hello World</h1>;
+  return <h1>{category}</h1>;
 }
