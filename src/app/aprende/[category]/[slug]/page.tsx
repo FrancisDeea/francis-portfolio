@@ -7,11 +7,13 @@ export const dynamicParams = false;
 export async function generateStaticParams({
   params: { category },
 }: {
-  params: { category: string }
+  params: { category: string };
 }) {
-  console.log(category)
+  console.log(category);
   const posts = await fetchPostsByCategory(category);
-  return [{slug: "hola"}];
+  return posts.map((post) => ({
+    slug: "hola",
+  }));
 }
 
 export default async function Page({
