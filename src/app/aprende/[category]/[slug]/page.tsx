@@ -2,7 +2,8 @@ import { fetchPostsByCategory } from "@/lib/dbdata";
 import { findByTitle, getSlug } from "@/lib/utils";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
-export const dynamic = 'force-static'
+export const dynamic = "force-static";
+export const dynamicParams = "false";
 
 export async function generateStaticParams({
   params: { category },
