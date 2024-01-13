@@ -8,8 +8,14 @@ import { fetchAllCategories } from "@/lib/dbdata";
 //   }));
 // }
 
-export default function Page() {
-    return (
-        <h1>Hello World</h1>
-    )
+const dynamicParams = false;
+export { dynamicParams };
+
+export default function Page({
+  params: { category },
+}: {
+  params: { category: string };
+}) {
+  console.log(category);
+  return <h1>Hello World</h1>;
 }
