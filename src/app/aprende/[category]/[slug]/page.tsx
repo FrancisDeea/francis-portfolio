@@ -4,13 +4,8 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 
 export const dynamicParams = false;
 
-export async function generateStaticParams({
-  params: { category },
-}: {
-  params: { category: string };
-}) {
-  console.log(category);
-  const posts = await fetchPostsByCategory(category);
+export async function generateStaticParams() {
+  const posts = await fetchPostsByCategory('CSS');
   return posts.map((post) => ({
     slug: "hola",
   }));
