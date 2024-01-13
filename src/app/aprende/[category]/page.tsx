@@ -1,6 +1,6 @@
 import { fetchAllCategories } from "@/lib/dbdata";
 
-export const dynamic = 'force-static'
+export const dynamicParams = false
 
 export async function generateStaticParams() {
   const categories = await fetchAllCategories();
