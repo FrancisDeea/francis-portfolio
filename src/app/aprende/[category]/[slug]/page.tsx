@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 export default async function Page({
   params: { slug, category },
 }: {
-  params: { slug: string; category: string };
+  params: { slug: string; category: number };
 }) {
   console.log(category, slug);
   const posts = await fetchPostsByCategory(category);
