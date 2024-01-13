@@ -10,10 +10,6 @@ export const dynamicParams = false
 //   }));
 // }
 
-export default function Page({
-  params: { category },
-}: {
-  params: { category: number };
-}) {
-  return <h1>{category}</h1>;
+export default function Page() {
+  return <h1>test</h1>;
 }
