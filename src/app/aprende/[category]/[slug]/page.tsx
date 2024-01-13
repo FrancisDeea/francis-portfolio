@@ -1,17 +1,25 @@
-import { fetchPostsByCategory } from "@/lib/dbdata";
+import { fetchAllPosts, fetchPostsById } from "@/lib/dbdata";
 import { findByTitle, getSlug } from "@/lib/utils";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 const dynamicParams = false;
 export { dynamicParams };
 
-export async function generateStaticParams({
-  params: { category },
-}: {
-  params: { category: string };
-}) {
-  const posts = await fetchPostsByCategory(category);
+// export async function generateStaticParams({
+//   params: { category },
+// }: {
+//   params: { category: string };
+// }) {
+//   const posts = await fetchPostsByCategory(category);
+//   return posts.map((post) => ({
+//     slug: getSlug(post.title),
+//   }));
+// }
+
+export async function generateStaticParams() {
+  const posts = await fetchAllPosts();
   return posts.map((post) => ({
+    category: post.categoryId.toString(),
     slug: getSlug(post.title),
   }));
 }
@@ -22,7 +30,7 @@ export default async function Page({
   params: { slug: string; category: string };
 }) {
   console.log(slug);
-  const posts = await fetchPostsByCategory(category);
+  const posts = await fetchPostsById(category);
   const post = findByTitle(posts, slug);
 
   if (post)

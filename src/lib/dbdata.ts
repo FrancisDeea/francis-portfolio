@@ -38,3 +38,13 @@ export const fetchPostsByCategory = async (name: string) => {
   });
   return posts;
 };
+
+export const fetchPostsById = async (id: string) => {
+  const search = Number(id)
+  const posts = await prisma.post.findMany({
+    where: {
+      categoryId: search
+    }
+  })
+  return posts
+}

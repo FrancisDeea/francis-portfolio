@@ -1,12 +1,12 @@
 import { fetchAllCategories } from "@/lib/dbdata";
 
-export async function generateStaticParams() {
-  const categories = await fetchAllCategories();
+// export async function generateStaticParams() {
+//   const categories = await fetchAllCategories();
 
-  return categories.map((category) => ({
-    category: category.name,
-  }));
-}
+//   return categories.map((category) => ({
+//     category: category.name,
+//   }));
+// }
 
 export default function Page() {
     return (
