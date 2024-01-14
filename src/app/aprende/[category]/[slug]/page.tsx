@@ -8,7 +8,7 @@ export const dynamicParams = false;
 export async function generateStaticParams() {
   const posts = await fetchAllPosts();
   return posts.map((post) => ({
-    category: post.category_name,
+    category: post.category_name.toLowerCase(),
     slug: getSlug(post.title),
   }));
 }

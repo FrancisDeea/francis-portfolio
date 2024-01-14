@@ -50,7 +50,10 @@ export const fetchPosts = async (quantity: number) => {
 export const fetchPostsByCategory = async (name: string) => {
   const posts = await prisma.post.findMany({
     where: {
-      category_name: name,
+      category_name: {
+        equals: name,
+        mode: 'insensitive'
+      }
     },
   });
   return posts;

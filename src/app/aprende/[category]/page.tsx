@@ -7,7 +7,7 @@ export async function generateStaticParams() {
   const categories = await fetchAllCategories();
 
   return categories.map((category) => ({
-    category: category.name,
+    category: category.name.toLowerCase(),
   }));
 }
 
@@ -17,12 +17,12 @@ export default async function Page({
   params: { category: string };
 }) {
   const fullCategory = (await fetchAllCategories()).find(
-    (item) => item.name === category
+    (item) => item.name.toLowerCase() === category
   );
 
   if (fullCategory)
     return (
-      <main className="max-w-full flex-1 min-h-[calc(100vh-96px)] p-4 rounded-md border-text border-2 bg-background2">
+      <main className="max-w-full flex-1 min-h-[calc(100vh-96px)] p-4 rounded-md border-medium border-2 bg-background2">
         <header>
           <h1>{fullCategory.title}</h1>
           <p>{fullCategory.description}</p>
