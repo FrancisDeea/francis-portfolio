@@ -18,7 +18,6 @@ export default async function Page({
 }: {
   params: { slug: string; category: string };
 }) {
-  console.log(category, slug);
   const posts = await fetchPostsByCategory(category);
   const post = findByTitle(posts, slug);
 
@@ -27,10 +26,10 @@ export default async function Page({
       <main className="flex-1 min-h-[calc(100vh-96px)]">
         <article
           id="post"
-          className="section border-2 border-text2 rounded-md bg-dark"
+          className="section rounded-md border-medium border-2 bg-background2"
         >
           <header className="mb-4 ct-flex-col">
-            <h1 className="mb-1">{post.title}</h1>
+            <h1 className="mb-1 text-opposite">{post.title}</h1>
             <div className="text-sm ct-flex-col gap-1 lg:ct-flex-row lg:justify-start">
               <span className="flex flex-row items-center gap-1 rounded-full border border-medium px-3 py-1 w-fit font-medium bg-dark">
                 <HtmlIcon size={5} /> Estás aprendiendo HTML
@@ -39,7 +38,7 @@ export default async function Page({
                 Fecha creación: {post.createdAt.toLocaleDateString()}
               </span>
             </div>
-            <p className="text-opposite">{post.description}</p>
+            <p className="!text-text font-medium">{post.description}</p>
           </header>
           <div className="">
             <MDXRemote source={post.content} />

@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  important: true,
   darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -19,6 +20,7 @@ const config: Config = {
         text: "hsl(var(--text) / <alpha-value>)",
         text2: "hsl(var(--text2) / <alpha-value>)",
         alert: "hsl(var(--alert) / <alpha-value>)",
+        hashtags: "hsl(var(--hashtags) / <alpha-value>)",
       },
       backgroundImage: {
         gradient: "var(--gradient)",

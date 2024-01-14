@@ -14,7 +14,7 @@ export default async function Categories() {
           <Link
             href={`/aprende/${slug}`}
             key={category.id}
-            className="font-semibold flex flex-row items-center gap-2"
+            className="font-semibold flex flex-row items-center gap-2 rounded-md py-1 px-2 bg-medium w-full text-opposite text-base text-center hover:scale-90 transition-transform"
           >
             {icon}
             {category.name}

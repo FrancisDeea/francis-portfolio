@@ -17,6 +17,7 @@
       rgb(216, 226, 251) 0%,
       rgb(227, 234, 252) 100%
     );
+    --hashtags: 35 92% 33%;
   }
 
   [class="dark"] {
@@ -33,6 +34,7 @@
       hsla(225, 59%, 8%, 1) 0%,
       hsla(226, 58%, 12%, 1) 100%
     );
+    --hashtags: 56 100% 50%;
   }
 
   body {
@@ -41,7 +43,7 @@
 
   h1,
   h2 {
-    @apply font-semibold text-3xl max-md:text-2xl;
+    @apply font-semibold text-3xl max-sm:text-2xl;
   }
 
   h2,
@@ -82,7 +84,7 @@
     @apply rounded-md py-2 px-3 border-2 w-2/3 m-auto font-semibold text-slate-50 text-lg text-center hover:scale-110 transition-transform;
   }
   .btn-social-sidebar {
-    @apply rounded-md py-1 px-2 border-2 w-full m-auto font-semibold text-slate-50 text-base text-center hover:scale-110 transition-transform;
+    @apply rounded-md py-1 px-2 border-2 w-full m-auto font-semibold text-slate-50 text-base text-center hover:scale-90 transition-transform;
   }
   
   .btn-link {

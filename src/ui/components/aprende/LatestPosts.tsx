@@ -12,8 +12,11 @@ export default async function LatestPosts({
 }) {
   const posts = await fetchPosts(quantity, category);
 
+  if(posts.length === 0)
+  return <p>¡Muy pronto habrá contenido nuevo!</p>
+
   return (
-    <div className="ct-flex-row">
+    <div className="ct-flex-row mt-2">
       {posts.map((post) => {
         const slug = getSlug(post.title);
         return (
@@ -28,11 +31,11 @@ export default async function LatestPosts({
 
 export function PostCard({ post }: { post: Post }) {
   return (
-    <article className="rounded-md bg-dark p-4 w-full">
-      <h2 className="text-xl">{post.title}</h2>
-      <div>
-        <span className="text-sm">{post.createdAt.toLocaleDateString()}</span>
-        <span className="text-sm">{post.hashtags.join(" ")}</span>
+    <article className="rounded-md bg-dark p-4 w-full hover:scale-[.97] transition-transform">
+      <h2 className="text-xl text-opposite">{post.title}</h2>
+      <div className="flex flex-row gap-2">
+        <span className="text-sm font-medium">{post.createdAt.toLocaleDateString()}</span>
+        <span className="text-sm text-hashtags font-medium">{post.hashtags.join(" ")}</span>
       </div>
     </article>
   );
