@@ -8,7 +8,7 @@ export default function Nav({ customClass, handleModal }: { customClass: string 
             <Link onClick={handleModal} href="/" className="hover:scale-110 transition-transform">Home</Link>
             <Link onClick={handleModal} href="" className="hover:scale-110 transition-transform">About me</Link>
             <Link onClick={handleModal} href="/projects" className="hover:scale-110 transition-transform">Projects</Link>
-            <Link onClick={handleModal} href="" className="hover:scale-110 transition-transform">Learn</Link>
+            <Link onClick={handleModal} href="/aprende" className="hover:scale-110 transition-transform">Learn</Link>
         </nav>
     )
 }

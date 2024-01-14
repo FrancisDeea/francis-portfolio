@@ -38,7 +38,7 @@ export default function Index() {
             <Link href="" className="btn-link">
               Contacto
             </Link>
-            <Link href="" className="btn-link">
+            <Link href="/aprende" className="btn-link">
               Aprende
             </Link>
           </div>
