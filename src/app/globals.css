@@ -81,7 +81,10 @@
   .btn-social {
     @apply rounded-md py-2 px-3 border-2 w-2/3 m-auto font-semibold text-slate-50 text-lg text-center hover:scale-110 transition-transform;
   }
-
+  .btn-social-sidebar {
+    @apply rounded-md py-1 px-2 border-2 w-full m-auto font-semibold text-slate-50 text-base text-center hover:scale-110 transition-transform;
+  }
+  
   .btn-link {
     @apply rounded-md py-2 px-3 font-semibold bg-background1 border-2 border-medium hover:bg-medium w-max transition-all;
   }

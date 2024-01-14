@@ -24,8 +24,11 @@ export default async function Page({
 
   if (post)
     return (
-      <main className="max-lg:p-4 py-4 max-w-4xl">
-        <article id="post" className="section border-2 rounded-md">
+      <main className="flex-1 min-h-[calc(100vh-96px)]">
+        <article
+          id="post"
+          className="section border-2 border-text2 rounded-md bg-dark"
+        >
           <header className="mb-4 ct-flex-col">
             <h1 className="mb-1">{post.title}</h1>
             <div className="text-sm ct-flex-col gap-1 lg:ct-flex-row lg:justify-start">
