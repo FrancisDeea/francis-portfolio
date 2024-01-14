@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { getSlug } from "@/lib/utils";
 import { fetchPosts } from "@/lib/dbdata";
 import { Post } from "@prisma/client";
 
@@ -13,7 +15,12 @@ export default async function LatestPosts({
   return (
     <div className="ct-flex-row">
       {posts.map((post) => {
-        return <PostCard key={post.id} post={post} />;
+        const slug = getSlug(post.title);
+        return (
+          <Link href={`/aprende/${category}/${slug}`} key={post.id} className="w-full">
+            <PostCard post={post} />
+          </Link>
+        );
       })}
     </div>
   );
