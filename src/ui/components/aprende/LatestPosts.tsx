@@ -1,8 +1,14 @@
 import { fetchPosts } from "@/lib/dbdata";
 import { Post } from "@prisma/client";
 
-export default async function LatestPosts({ quantity }: { quantity: number }) {
-  const posts = await fetchPosts(quantity);
+export default async function LatestPosts({
+  quantity,
+  category,
+}: {
+  quantity: number;
+  category?: string;
+}) {
+  const posts = await fetchPosts(quantity, category);
 
   return (
     <div className="ct-flex-row">

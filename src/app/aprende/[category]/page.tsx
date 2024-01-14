@@ -27,7 +27,7 @@ export default async function Page({
           <h1>{fullCategory.title}</h1>
           <p>{fullCategory.description}</p>
         </header>
-        <LatestPosts quantity={6} />
+        <LatestPosts quantity={6} category={fullCategory.name} />
       </main>
     );
 }
