@@ -74,7 +74,32 @@
 
   #post {
     p {
-      @apply text-opposite
+      @apply text-opposite;
+    }
+  }
+
+  #resume {
+    h1,h2,h3 {
+      @apply text-text2
+    }
+    h1 {
+      @apply text-2xl;
+    }
+    h2 {
+      @apply text-xl mb-4;
+    }
+
+    p {
+      @apply text-base font-medium;
+    }
+  }
+
+  #project, #curse {
+    h3 {
+      @apply text-lg;
+    }
+    p {
+      @apply text-sm;
     }
   }
 }
@@ -86,7 +111,7 @@
   .btn-social-sidebar {
     @apply rounded-md py-1 px-2 border-2 w-full m-auto font-semibold text-slate-50 text-base text-center hover:scale-90 transition-transform;
   }
-  
+
   .btn-link {
     @apply rounded-md py-2 px-3 font-semibold bg-background1 border-2 border-medium hover:bg-medium w-max transition-all;
   }
@@ -108,7 +133,7 @@
   }
 
   .skeleton {
-    @apply h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-full
+    @apply h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-full;
   }
 }
 
@@ -138,7 +163,6 @@
     border-color: transparent;
   }
 }
-
 
 main {
   margin: auto;
