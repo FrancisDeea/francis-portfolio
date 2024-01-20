@@ -12,7 +12,7 @@ export default function Header({ lang }: { lang: Lang }) {
       </Link>
       <Nav customClass="max-md:hidden" handleModal={undefined} lang={lang} />
       <ThemeSelector customClass="max-md:hidden" />
-      <ModalNav />
+      <ModalNav lang={lang} />
     </header>
   );
 }
