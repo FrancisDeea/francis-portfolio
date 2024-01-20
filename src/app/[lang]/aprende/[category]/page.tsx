@@ -1,12 +1,18 @@
 import { fetchAllCategories } from "@/lib/dbdata";
+import { Lang } from "@/lib/definitions";
 import LatestPosts from "@/ui/components/aprende/LatestPosts";
 
 export const dynamicParams = false;
 
-export async function generateStaticParams() {
+export async function generateStaticParams({
+  params: { lang },
+}: {
+  params: { lang: Lang };
+}) {
   const categories = await fetchAllCategories();
 
   return categories.map((category) => ({
+    lang: lang,
     category: category.name.toLowerCase(),
   }));
 }
@@ -28,8 +34,13 @@ export default async function Page({
           <p className="text-text font-medium">{fullCategory.description}</p>
         </header>
         <div>
-        <span className="font-semibold text-3xl max-sm:text-2xl text-opposite">Lecciones</span>
-        <LatestPosts quantity={6} category={fullCategory.name.toLowerCase()} />
+          <span className="font-semibold text-3xl max-sm:text-2xl text-opposite">
+            Lecciones
+          </span>
+          <LatestPosts
+            quantity={6}
+            category={fullCategory.name.toLowerCase()}
+          />
         </div>
       </main>
     );
