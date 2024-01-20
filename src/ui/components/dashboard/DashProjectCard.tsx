@@ -4,6 +4,7 @@ import type { Project } from "@/lib/definitions";
 import { removeProject } from "@/services/projectServices";
 
 import { DeleteIcon, ViewIcon, EditIcon, findIcon } from "@/ui/icons";
+import Link from "next/link";
 
 export default function DashProjectCard({ project }: { project: Project }) {
   const { id, title, description, image_url, technologies } = project;
@@ -22,9 +23,9 @@ export default function DashProjectCard({ project }: { project: Project }) {
       <div className="ct-flex-col justify-between gap-1 flex-1 max-lg:min-w-max">
         <span>Acciones</span>
         <div className="ct-flex-row">
-          <button>
+          <Link href="/es/projects">
             <ViewIcon />
-          </button>
+          </Link>
           <button>
             <EditIcon />
           </button>

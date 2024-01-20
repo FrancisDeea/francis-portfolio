@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { fetchAllCategories } from "@/lib/dbdata";
 import { findIcon } from "@/ui/icons";
+import { Lang } from "@/lib/definitions";
 
-export default async function Categories() {
+export default async function Categories({ lang }: { lang: Lang }) {
   const categories = await fetchAllCategories();
 
   return (
@@ -12,7 +13,7 @@ export default async function Categories() {
         const icon = findIcon(category.name);
         return (
           <Link
-            href={`/aprende/${slug}`}
+            href={`/${lang}/aprende/${slug}`}
             key={category.id}
             className="font-semibold flex flex-row items-center gap-2 rounded-md py-1 px-2 bg-medium w-full text-opposite text-base text-center hover:scale-90 transition-transform"
           >

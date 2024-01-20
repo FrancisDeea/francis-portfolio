@@ -7,3 +7,5 @@ export interface Project {
   live_url: string;
   github_url: string;
 }
+
+export type Lang = "en" | "es";

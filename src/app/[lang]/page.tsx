@@ -4,9 +4,13 @@ import { LinkedinIcon, MailIcon, GithubIcon } from "@/ui/icons";
 import LastProjects from "@/ui/components/LastProjects";
 import LatestPosts from "@/ui/components/LatestPosts";
 import SocialSection from "@/ui/components/SocialSection";
-import { cairoPlay } from "@/ui/fonts";
+import { Lang } from "@/lib/definitions";
 
-export default function Index() {
+export default function Index({
+  params: { lang },
+}: {
+  params: { lang: Lang };
+}) {
   return (
     <main className="max-lg:p-4 py-4 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <section className="section bg-dark ct-flex-col min-[550px]:flex-row md:col-span-2">
@@ -38,7 +42,7 @@ export default function Index() {
             <Link href="" className="btn-link">
               Contacto
             </Link>
-            <Link href="/aprende" className="btn-link">
+            <Link href={`/${lang}/aprende`} className="btn-link">
               Aprende
             </Link>
           </div>
@@ -57,10 +61,18 @@ export default function Index() {
             >
               <LinkedinIcon style="w-8 h-8" />
             </a>
-            <a href="mailto:francisbernal14@gmail.com" target="_blank" className="hover:scale-110 transition-transform">
+            <a
+              href="mailto:francisbernal14@gmail.com"
+              target="_blank"
+              className="hover:scale-110 transition-transform"
+            >
               <MailIcon style="w-10 h-10" />
             </a>
-            <a href="https://github.com/FrancisDeea" target="_blank" className="hover:scale-110 transition-transform">
+            <a
+              href="https://github.com/FrancisDeea"
+              target="_blank"
+              className="hover:scale-110 transition-transform"
+            >
               <GithubIcon style="w-10 h-10" />
             </a>
           </div>
@@ -71,7 +83,7 @@ export default function Index() {
 
       <LatestPosts />
 
-      <LastProjects />
+      <LastProjects lang={lang} />
     </main>
   );
 }

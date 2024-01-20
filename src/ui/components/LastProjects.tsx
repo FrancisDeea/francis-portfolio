@@ -1,8 +1,9 @@
 import { fetchLastProject } from "@/lib/dbdata";
 import SmallCardProject from "./SmallCardProject";
 import Link from "next/link";
+import { Lang } from "@/lib/definitions";
 
-export default async function LastProjects() {
+export default async function LastProjects({lang}: { lang: Lang}) {
     const projects = await fetchLastProject(3);
 
     return (
@@ -16,7 +17,7 @@ export default async function LastProjects() {
                         })
                     }
                 </div>
-                <Link href="/projects" className="btn-link">Ver todos</Link>
+                <Link href={`/${lang}/projects`} className="btn-link">Ver todos</Link>
             </div>
         </section>
     )
