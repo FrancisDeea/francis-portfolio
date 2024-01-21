@@ -1,13 +1,12 @@
 "use client";
 
-import { IconCategory } from "@tabler/icons-react";
 import Nav from "./Nav";
 import ThemeSelector from "./ThemeSelector";
+
 import { CloseIcon, MenuIcon } from "../icons";
-import { useEffect } from "react";
 import { Lang } from "@/lib/definitions";
 
-export default function ModalNav({ lang }: { lang: Lang }) {
+export default function ModalNav({ lang, nav }: { lang: Lang; nav: string }) {
   const handleModal = () => {
     const checkbox = document.getElementById("modalNav") as HTMLInputElement;
 
@@ -15,21 +14,6 @@ export default function ModalNav({ lang }: { lang: Lang }) {
       checkbox.checked = false;
     }
   };
-
-  // useEffect(() => {
-  //     const checkbox = document.getElementById('modalNav') as HTMLInputElement
-
-  //     function bodyFlow() {
-  //         if (checkbox.checked) {
-  //             document.body.style.overflow = 'hidden';
-  //         } else {
-  //             document.body.style.overflow = 'auto';
-  //         }
-  //     }
-
-  //     checkbox.addEventListener('change', bodyFlow)
-  //     return () => checkbox.removeEventListener('change', bodyFlow)
-  // })
 
   return (
     <div className="md:hidden">
@@ -57,7 +41,12 @@ export default function ModalNav({ lang }: { lang: Lang }) {
           <hr className="border-opposite w-[90%]" />
         </div>
 
-        <Nav customClass={null} handleModal={handleModal} lang={lang} />
+        <Nav
+          customClass={null}
+          handleModal={handleModal}
+          nav={nav}
+          lang={lang}
+        />
 
         <div>
           <ThemeSelector customClass={null} />

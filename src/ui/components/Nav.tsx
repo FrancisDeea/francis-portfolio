@@ -1,15 +1,16 @@
 import Link from "next/link";
-import { MouseEventHandler } from "react";
 import { Lang } from "@/lib/definitions";
 
-export default function Nav({
+export default async function Nav({
   customClass,
   handleModal,
   lang,
+  nav,
 }: {
   customClass: string | null;
-  handleModal: undefined | MouseEventHandler<HTMLAnchorElement>;
+  handleModal: undefined | React.ReactEventHandler;
   lang: Lang;
+  nav: string;
 }) {
   return (
     <nav
@@ -20,28 +21,28 @@ export default function Nav({
         href={`/${lang}`}
         className="hover:scale-110 transition-transform"
       >
-        Home
+        {nav[1]}
       </Link>
       <Link
         onClick={handleModal}
         href={`/${lang}/about-me`}
         className="hover:scale-110 transition-transform"
       >
-        About me
+        {nav[2]}
       </Link>
       <Link
         onClick={handleModal}
         href={`/${lang}/projects`}
         className="hover:scale-110 transition-transform"
       >
-        Projects
+        {nav[3]}
       </Link>
       <Link
         onClick={handleModal}
         href={`/${lang}/aprende`}
         className="hover:scale-110 transition-transform"
       >
-        Learn
+        {nav[4]}
       </Link>
     </nav>
   );

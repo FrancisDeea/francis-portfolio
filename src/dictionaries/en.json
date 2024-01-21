@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "1": "Home",
+    "2": "About me",
+    "3": "Projects",
+    "4": "Learn"
+  },
+  "home": {
+    "intro": {
+      "title": {
+        "1": "Web Programming",
+        "2": "Learn",
+        "3": "JS",
+        "4": "and",
+        "5": "React",
+        "6": "Francis[dev]"
+      },
+      "description": "Specialised in JavaScript and NextJS (React). Development of modern high-performance web applications.",
+      "buttons": {
+        "1": "Contact",
+        "2": "Learn"
+      }
+    },
+    "contact": {
+      "title": "I want to develop your project",
+      "description": "Do you need a web programmer or have any questions?"
+    },
+    "social": {
+      "title": "Learn short video lessons about web programming"
+    },
+    "posts": {
+      "title": "Latest short lessons about web programming"
+    },
+    "projects": {
+      "title": "Take a look at my latest project",
+      "button": "View more"
+    }
+  },
+  "projects": {
+    "title": "Take a look at my latest project"
+  }
+}
