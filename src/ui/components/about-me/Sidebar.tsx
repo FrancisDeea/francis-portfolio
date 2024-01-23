@@ -1,12 +1,6 @@
-"use client";
-
 /* eslint-disable @next/next/no-img-element */
-export default function Sidebar() {
-  const handlePrint = () => {
-    const iframe = document.getElementById("iframe") as HTMLIFrameElement;
-    const iwindow = iframe?.contentWindow;
-    iwindow?.print();
-  };
+export default function Sidebar({ dict }: { dict: any }) {
+  console.log(dict);
 
   return (
     <aside className="section rounded-md border-2 bg-background1 p-4 flex-1 max-[896px]:hidden h-min sticky top-4">
@@ -19,10 +13,10 @@ export default function Sidebar() {
           />
           <div className="flex flex-col">
             <span className="font-semibold text-lg text-text2 text-center">
-              ¡Hola, soy Francis!
+              {dict.greeting}
             </span>
             <span className="font-bold text-2xl text-alert text-center">
-              JS FullStack Dev
+              {dict.position}
             </span>
           </div>
           <div className="ct-flex-row gap-2">
@@ -32,7 +26,7 @@ export default function Sidebar() {
               className="btn-link text-sm text-center"
               id="cv"
             >
-              Download CV
+              {dict.downloadButton}
             </a>
             <a className="btn-link text-sm flex-1 text-center">LinkedIn</a>
           </div>

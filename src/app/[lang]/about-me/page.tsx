@@ -1,20 +1,28 @@
 import { GithubIcon, LinkedinIcon, MailIcon, findIcon } from "@/ui/icons";
 import { PERSONAL_DATA } from "@/lib/personal-data";
 import Sidebar from "@/ui/components/about-me/Sidebar";
+import { Lang } from "@/lib/definitions";
+import getDictionary from "@/dictionaries/dictionaries";
 
-export default function Page() {
+export default async function Page({
+  params: { lang },
+}: {
+  params: { lang: Lang };
+}) {
   const { projects, education } = PERSONAL_DATA;
+  const { aboutMe } = await getDictionary(lang);
+  console.log(aboutMe);
 
   return (
-    <main id="resume" className="py-4 flex flex-row gap-4 w-[calc(100%-2rem)] max-w-[1200px]">
-      <Sidebar />
+    <main
+      id="resume"
+      className="py-4 flex flex-row gap-4 w-[calc(100%-2rem)] max-w-[1200px]"
+    >
+      <Sidebar dict={aboutMe} />
       <div className="max-w-4xl ct-flex-col gap-6 bg-dark p-8 max-md:p-4 rounded-md">
         <section className="ct-flex-col gap-2">
           <h1>Francisco Javier Bernal Cabra</h1>
-          <p>
-            Programador Full Stack especializado en JavaScript y NextJS (React).
-            +2 años de experiencia. Ubicado en Málaga, España.
-          </p>
+          <p>{aboutMe.description}</p>
           <div className="ct-flex-row">
             <a
               href="http://"
@@ -38,34 +46,22 @@ export default function Page() {
               href="http://"
               className="h-9 px-2 border-2 border-medium grid place-content-center rounded-sm hover:bg-medium/50 transition-colors font-semibold text-sm"
             >
-              Resume
+              {aboutMe.cv}
             </a>
           </div>
         </section>
 
         <section>
-          <h2>Sobre mí</h2>
+          <h2>{aboutMe.subtitle1}</h2>
           <div className="ct-flex-col gap-2">
-            <p>
-              ¡Soy Francis, tengo 28 años y resido en Málaga, España 🇪🇸 Me
-              enfoco en JS y React para crear aplicaciones web modernas y
-              minimalistas.
-            </p>
-            <p>
-              Me encanta trabajar con TypeScript, NextJS(React), NodeJS y
-              TailwindCSS. Herramientas que me permiten crear webs rápidas y
-              escalables.
-            </p>
-            <p>
-              Actualmente desarrollando un proyecto personal relacionado con la
-              creación de contenido a la vez que busco una posición estable
-              (Presencial en Málaga o Remoto)
-            </p>
+            <p>{aboutMe.subdescription1}</p>
+            <p>{aboutMe.subdescription2}</p>
+            <p>{aboutMe.subdescription3}</p>
           </div>
         </section>
 
         <section>
-          <h2>Projectos</h2>
+          <h2>{aboutMe.subtitle2}</h2>
           <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
             {projects.map((item) => {
               return (
@@ -90,7 +86,7 @@ export default function Page() {
         </section>
 
         <section>
-          <h2>Educación</h2>
+          <h2>{aboutMe.subtitle3}</h2>
           <div className="grid grid-cols-1 gap-4 max-md:grid-cols-1">
             {education.map((item) => {
               return (
@@ -110,7 +106,7 @@ export default function Page() {
                       target="_blank"
                       className="btn-link text-sm"
                     >
-                      Ver certificado
+                      {aboutMe.certificationButton}
                     </a>
                   )}
                 </article>

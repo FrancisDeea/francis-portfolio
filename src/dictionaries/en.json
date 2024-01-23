@@ -38,5 +38,20 @@
   },
   "projects": {
     "title": "Take a look at my latest project"
+  },
+  "aboutMe": {
+    "title": "Francisco Javier Bernal Cabra",
+    "description": "Full Stack Developer specialised in JavaScript and NextJS (React). +2 years of experience. Located in Málaga, Spain.",
+    "cv": "Resume",
+    "subtitle1": "About me",
+    "subdescription1": "I'm Francis, a 28 year old guy based in Malaga, 🇪🇸 Spain. Focused on JS and React to create modern and minimalistic web applications.",
+    "subdescription2": "I love working with TypeScript, NextJS(React), NodeJS and TailwindCSS. Tools that allow me to create fast and scalable websites.",
+    "subdescription3": "Currently developing a personal project related to content creation while looking for a stable position (on-site in Malaga or remote).",
+    "subtitle2": "Projects",
+    "subtitle3": "Education",
+    "certificationButton": "View certificate",
+    "greeting": "Hello, I'm Francis!",
+    "position": "JS FullStack Dev",
+    "downloadButton": "Download CV"
   }
 }

@@ -38,5 +38,20 @@
   },
   "projects": {
     "title": "Echa un vistazo a mis últimos proyectos"
+  },
+  "aboutMe": {
+    "title": "Francisco Javier Bernal Cabra",
+    "description": "Programador Full Stack especializado en JavaScript y NextJS (React). +2 años de experiencia. Ubicado en Málaga, España.",
+    "cv": "CV",
+    "subtitle1": "Sobre mí",
+    "subdescription1": "¡Soy Francis, tengo 28 años y resido en Málaga, 🇪🇸 España. Me enfoco en JS y React para crear aplicaciones web modernas y minimalistas.",
+    "subdescription2": "Me encanta trabajar con TypeScript, NextJS(React), NodeJS y TailwindCSS. Herramientas que me permiten crear webs rápidas y escalables.",
+    "subdescription3": "Actualmente desarrollando un proyecto personal relacionado con la creación de contenido a la vez que busco una posición estable (Presencial en Málaga o Remoto)",
+    "subtitle2": "Projectos",
+    "subtitle3": "Educación",
+    "certificationButton": "Ver certificado",
+    "greeting": "¡Hola, soy Francis!",
+    "position": "Programador FullStack JS",
+    "downloadButton": "Descargar CV"
   }
 }
