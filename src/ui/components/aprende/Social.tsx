@@ -1,9 +1,9 @@
 import { InstagramIcon, YoutubeIcon } from "@/ui/icons";
 
-export default function Social() {
+export default function Social({dict}: {dict: any}) {
   return (
     <div className="ct-flex-col gap-2">
-      <span className="text-opposite font-medium">¡Aprende con videos cortos!</span>
+      <span className="text-opposite font-medium">{dict.cta}</span>
       <div className="ct-flex-col w-full">
         <a href="" className="btn-social-sidebar tiktok-style">
           TikTok

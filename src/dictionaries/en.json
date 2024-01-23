@@ -53,5 +53,15 @@
     "greeting": "Hello, I'm Francis!",
     "position": "JS FullStack Dev",
     "downloadButton": "Download CV"
+  },
+  "learn": {
+    "sidebar": {
+      "category": "Select a category:",
+      "cta": "Learn with short video clips!"
+    },
+    "lessons": {
+      "subtitle": "Lessons",
+      "description": "New content coming soon!"
+    }
   }
 }

@@ -1,3 +1,4 @@
+import getDictionary from "@/dictionaries/dictionaries";
 import { fetchAllCategories } from "@/lib/dbdata";
 import { Lang } from "@/lib/definitions";
 import LatestPosts from "@/ui/components/aprende/LatestPosts";
@@ -18,13 +19,16 @@ export async function generateStaticParams({
 }
 
 export default async function Page({
-  params: { category },
+  params: { category, lang },
 }: {
-  params: { category: string };
+  params: { category: string; lang: Lang };
 }) {
   const fullCategory = (await fetchAllCategories()).find(
     (item) => item.name.toLowerCase() === category
   );
+  const {
+    learn: { lessons },
+  } = await getDictionary(lang);
 
   if (fullCategory)
     return (
@@ -35,11 +39,12 @@ export default async function Page({
         </header>
         <div>
           <span className="font-semibold text-3xl max-sm:text-2xl text-opposite">
-            Lecciones
+            {lessons.subtitle}
           </span>
           <LatestPosts
             quantity={6}
             category={fullCategory.name.toLowerCase()}
+            dict={lessons}
           />
         </div>
       </main>
