@@ -6,6 +6,7 @@ import ThemeSelector from "./ThemeSelector";
 
 import { Lang } from "@/lib/definitions";
 import getDictionary from "@/dictionaries/dictionaries";
+import LanguageSelector from "./LanguageSelector";
 
 export default async function Header({ lang }: { lang: Lang }) {
   const { nav } = await getDictionary(lang);
@@ -21,7 +22,10 @@ export default async function Header({ lang }: { lang: Lang }) {
         lang={lang}
         nav={nav}
       />
-      <ThemeSelector customClass="max-md:hidden" />
+      <div className="ct-flex-row">
+        <ThemeSelector customClass="max-md:hidden" />
+        <LanguageSelector lang={lang} />
+      </div>
       <ModalNav lang={lang} nav={nav} />
     </header>
   );
