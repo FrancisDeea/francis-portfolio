@@ -24,7 +24,7 @@ export default async function Header({ lang }: { lang: Lang }) {
       />
       <div className="ct-flex-row">
         <ThemeSelector customClass="max-md:hidden" />
-        <LanguageSelector lang={lang} />
+        <LanguageSelector lang={lang} customClass="max-md:hidden" />
       </div>
       <ModalNav lang={lang} nav={nav} />
     </header>

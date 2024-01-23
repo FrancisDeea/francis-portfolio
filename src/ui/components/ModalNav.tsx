@@ -5,6 +5,7 @@ import ThemeSelector from "./ThemeSelector";
 
 import { CloseIcon, MenuIcon } from "../icons";
 import { Lang } from "@/lib/definitions";
+import LanguageSelector from "./LanguageSelector";
 
 export default function ModalNav({ lang, nav }: { lang: Lang; nav: string }) {
   const handleModal = () => {
@@ -48,9 +49,9 @@ export default function ModalNav({ lang, nav }: { lang: Lang; nav: string }) {
           lang={lang}
         />
 
-        <div>
+        <div className="flex flex-col gap-2 items-start">
+          <LanguageSelector lang={lang} />
           <ThemeSelector customClass={null} />
-          {/* <LanguageSelector /> */}
         </div>
       </div>
     </div>

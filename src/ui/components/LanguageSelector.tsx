@@ -4,7 +4,13 @@ import { Lang } from "@/lib/definitions";
 import { usePathname, useRouter } from "next/navigation";
 import { MouseEventHandler } from "react";
 
-export default function LanguageSelector({ lang }: { lang: Lang }) {
+export default function LanguageSelector({
+  lang,
+  customClass,
+}: {
+  lang: Lang;
+  customClass?: string;
+}) {
   const path = usePathname();
   const router = useRouter();
 
@@ -17,7 +23,7 @@ export default function LanguageSelector({ lang }: { lang: Lang }) {
   };
 
   return (
-    <div className="flex flex-row gap-1">
+    <div className={`flex flex-row gap-1 ${customClass}`}>
       <button
         onClick={handleClick}
         value="es"
