@@ -7,7 +7,7 @@ export default async function SocialSection({ lang }: { lang: Lang }) {
   } = await getDictionary(lang);
 
   return (
-    <section className="section bg-background2 ct-flex-col justify-evenly">
+    <section className="section bg-background2 ct-flex-col justify-evenly max-lg:order-4">
       <h2>{social.title}</h2>
       <div className="ct-flex-col w-full">
         <a href="" className="btn-social tiktok-style">

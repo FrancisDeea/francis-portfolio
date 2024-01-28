@@ -25,9 +25,9 @@ export default function ModalNav({ lang, nav }: { lang: Lang; nav: string }) {
 
       <div
         className="
-                    ct-flex-col justify-evenly fixed left-0 right-0 bottom-0 w-[calc(100%-2rem)] h-[calc(100%-1rem)] m-auto p-8
-                    bg-dark/90 rounded-t-md border border-medium border-b-0 backdrop-blur-md hidden 
-                    animate-fade-up animate-duration-100 animate-ease-in-out 
+                    ct-flex-col justify-evenly fixed inset-0 bottom-0 p-8
+                    bg-dark/90 backdrop-blur-md hidden 
+                    animate-fade-up animate-duration-100
                     peer-checked:flex"
       >
         <label htmlFor="modalNav" className="cursor-pointer">

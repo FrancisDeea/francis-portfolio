@@ -16,7 +16,7 @@ export default async function Page({
   return (
     <main
       id="resume"
-      className="py-4 flex flex-row gap-4 w-[calc(100%-2rem)] max-w-[1200px]"
+      className="py-4 flex flex-row gap-4 w-[calc(100%-1.5rem)] max-w-[1200px]"
     >
       <Sidebar dict={aboutMe} />
       <div className="max-w-4xl ct-flex-col gap-6 bg-dark p-8 max-md:p-4 rounded-md">

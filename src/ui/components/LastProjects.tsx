@@ -13,12 +13,16 @@ export default async function LastProjects({ lang }: { lang: Lang }) {
   } = await getDictionary(lang);
 
   return (
-    <section className="section bg-background2 col-span-full">
+    <section className="section bg-background2 col-span-full max-lg:order-2">
       <div className="ct-flex-col">
         <h2 className="">{projectsDict.title}</h2>
         <div className="custom-grid gap-6">
           {projects.map((project) => {
-            return <SmallCardProject project={project} key={project.id} />;
+            return (
+              <a key={project.id} href={project.live_url} target="_blank" className="hover:scale-105 transition-transform">
+                <SmallCardProject project={project} />
+              </a>
+            );
           })}
         </div>
         <Link href={`/${lang}/projects`} className="btn-link">

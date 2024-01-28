@@ -12,16 +12,16 @@ export default function Index({
   params: { lang: Lang };
 }) {
   return (
-    <main className="max-lg:p-4 py-4 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <main className="max-lg:p-3 max-lg:pt-4 py-4 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <IntroSection lang={lang} />
 
       <ContactSection lang={lang} />
 
+      <LastProjects lang={lang} />
+
       <SocialSection lang={lang} />
 
       <LatestPosts lang={lang} />
-
-      <LastProjects lang={lang} />
     </main>
   );
 }

@@ -12,7 +12,7 @@ export default async function Header({ lang }: { lang: Lang }) {
   const { nav } = await getDictionary(lang);
 
   return (
-    <header className="section bg-medium border-none font-semibold rounded-md h-12 w-[calc(100%-2rem)] max-w-[1200px] m-auto mt-4 ct-flex-row justify-evenly">
+    <header className="section bg-medium border-none font-semibold rounded-md h-12 w-[calc(100%-1.5rem)] max-w-[1200px] m-auto mt-4 ct-flex-row justify-evenly">
       <Link href={`/${lang}`} className="text-opposite">
         &lt;FrancisBernal /&gt;
       </Link>

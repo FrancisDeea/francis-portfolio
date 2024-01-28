@@ -15,7 +15,7 @@ export default async function Projects({
   const { projects: projectsDict } = await getDictionary(lang);
 
   return (
-    <main className="max-lg:p-4 py-4">
+    <main className="max-lg:p-3 max-lg:pt-4 py-4">
       <section className="ct-flex-col">
         <h1>{projectsDict.title}</h1>
         <div className="custom-grid gap-x-8 gap-y-12 max-md:gap-y-10">

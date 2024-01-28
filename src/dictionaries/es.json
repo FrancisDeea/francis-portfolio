@@ -17,8 +17,8 @@
       },
       "description": "Especializado en JavaScript y NextJS (React). Desarrollo de aplicaciones web modernas de alto rendimiento.",
       "buttons": {
-        "1": "Contacto",
-        "2": "Aprende"
+        "1": "¿Quién soy?",
+        "2": "Aprende Web"
       }
     },
     "contact": {

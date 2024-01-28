@@ -8,7 +8,7 @@ export default async function LatestPosts({ lang }: { lang: Lang }) {
   } = await getDictionary(lang);
 
   return (
-    <section className="section bg-background2 border-medium md:col-start-1 md:col-span-2 lg:col-start-2 lg:col-span-2">
+    <section className="section bg-background2 border-medium md:col-start-1 md:col-span-2 lg:col-start-2 lg:col-span-2 max-lg:order-3">
       <div className="ct-flex-col">
         <h2>{posts.title}</h2>
         <article className="ct-flex-row rounded-md bg-dark p-4 h-min">
