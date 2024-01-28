@@ -2,6 +2,7 @@ import { montserrat } from "@/ui/fonts";
 import "../globals.css";
 
 import Header from "@/ui/components/Header";
+import Footer from "@/ui/components/Footer";
 
 import type { Metadata } from "next";
 import { Lang } from "@/lib/definitions";
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className={`${montserrat.className}`}>
         <Header lang={params.lang} />
         {children}
+        <Footer />
       </body>
     </html>
   );

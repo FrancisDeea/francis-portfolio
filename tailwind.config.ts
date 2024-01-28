@@ -22,6 +22,7 @@ const config: Config = {
         text2: "hsl(var(--text2) / <alpha-value>)",
         alert: "hsl(var(--alert) / <alpha-value>)",
         hashtags: "hsl(var(--hashtags) / <alpha-value>)",
+        footer: "var(--footer)"
       },
       backgroundImage: {
         gradient: "var(--gradient)",
