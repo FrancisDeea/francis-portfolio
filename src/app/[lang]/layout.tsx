@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang={params.lang}>
+    <html lang={params.lang} className="dark">
       <body className={`${montserrat.className}`}>
         <Header lang={params.lang} />
         {children}
