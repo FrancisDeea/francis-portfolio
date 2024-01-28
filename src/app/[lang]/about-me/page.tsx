@@ -19,8 +19,8 @@ export default async function Page({
       className="py-4 flex flex-row gap-4 w-[calc(100%-1.5rem)] max-w-[1200px]"
     >
       <Sidebar dict={aboutMe} />
-      <div className="max-w-4xl ct-flex-col gap-6 bg-dark p-8 max-md:p-4 rounded-md">
-        <section className="ct-flex-col gap-2">
+      <div className="max-w-4xl ct-flex-col gap-6">
+        <section className="ct-flex-col gap-2 section bg-dark border-medium rounded-xl">
           <h1>Francisco Javier Bernal Cabra</h1>
           <p>{aboutMe.description}</p>
           <div className="ct-flex-row">
@@ -51,7 +51,7 @@ export default async function Page({
           </div>
         </section>
 
-        <section>
+        <section className="section bg-background2 border-medium">
           <h2>{aboutMe.subtitle1}</h2>
           <div className="ct-flex-col gap-2">
             <p>{aboutMe.subdescription1}</p>
@@ -60,7 +60,7 @@ export default async function Page({
           </div>
         </section>
 
-        <section>
+        <section className="section bg-background2 border-medium">
           <h2>{aboutMe.subtitle2}</h2>
           <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
             {projects.map((item) => {
@@ -68,7 +68,7 @@ export default async function Page({
                 <a href={item.url} key={item.id} target="_blank">
                   <article
                     id="project"
-                    className="border border-opposite p-4 h-full flex flex-col justify-between gap-2"
+                    className="bg-dark rounded-md p-4 h-full flex flex-col justify-between gap-2"
                   >
                     <h3>{item.name}</h3>
                     <p>{item.description}</p>
@@ -85,14 +85,14 @@ export default async function Page({
           </div>
         </section>
 
-        <section>
+        <section className="section bg-background2 border-medium">
           <h2>{aboutMe.subtitle3}</h2>
           <div className="grid grid-cols-1 gap-4 max-md:grid-cols-1">
             {education.map((item) => {
               return (
                 <article
                   id="curse"
-                  className="bg-medium/20 rounded-md p-4 h-full flex flex-col justify-between gap-2"
+                  className="bg-dark rounded-md p-4 h-full flex flex-col justify-between gap-2"
                   key={item.name}
                 >
                   <div className="flex flex-col gap-0">
