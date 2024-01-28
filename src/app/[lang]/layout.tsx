@@ -1,7 +1,9 @@
-import type { Metadata } from "next";
 import { montserrat } from "@/ui/fonts";
 import "../globals.css";
+
 import Header from "@/ui/components/Header";
+
+import type { Metadata } from "next";
 import { Lang } from "@/lib/definitions";
 
 export const metadata: Metadata = {

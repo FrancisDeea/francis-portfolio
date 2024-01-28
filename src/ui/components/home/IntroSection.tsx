@@ -31,7 +31,7 @@ export default async function IntroSection({ lang }: { lang: Lang }) {
         </h1>
         <p>{home.intro.description}</p>
         <div className="ct-flex-row">
-          <Link href="" className="btn-link">
+          <Link href={`/${lang}/about-me`} className="btn-link">
             {home.intro.buttons[1]}
           </Link>
           <Link href={`/${lang}/aprende`} className="btn-link">
