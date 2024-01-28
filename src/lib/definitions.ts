@@ -9,3 +9,9 @@ export interface Project {
 }
 
 export type Lang = "en" | "es";
+
+export interface User {
+  id: string;
+  username: string;
+  password: string;
+}

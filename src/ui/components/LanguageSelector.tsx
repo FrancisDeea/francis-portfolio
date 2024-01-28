@@ -23,7 +23,19 @@ export default function LanguageSelector({
   };
 
   return (
-    <div className={`flex flex-row gap-1 ${customClass}`}>
+    <div className={`flex flex-row gap-1 ${customClass}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    `}>
       <button
         onClick={handleClick}
         value="es"
