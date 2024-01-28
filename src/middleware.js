@@ -1,5 +1,6 @@
 import NextAuth from 'next-auth';
 import { authConfig } from '../auth.config';
+import { NextResponse } from 'next/server';
 
 let locales = ['es', 'en']
 let defaultLocale = 'es'
@@ -17,15 +18,13 @@ export const getLocale = (request) => {
 
 const { auth } = NextAuth(authConfig);
 
-export default auth((request) => {
-    console.log(request.auth)
-
-    if (request.nextUrl.pathname.includes('/dashboard') && !request.auth) {
+export default function middleware(request) {
+    if (request.nextUrl.pathname.includes('/dashboard')) {
         return auth(request)
     }
 
     if (request.nextUrl.pathname.includes('login')) {
-        return
+        return auth(request)
     }
 
     // Check if there is any supported locale in the pathname
@@ -44,7 +43,7 @@ export default auth((request) => {
     // e.g. incoming request is /products
     // The new URL is now /en-US/products
     return Response.redirect(request.nextUrl)
-})
+}
 
 
 export const config = {
