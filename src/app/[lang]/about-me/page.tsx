@@ -20,7 +20,7 @@ export default async function Page({
     >
       <Sidebar dict={aboutMe} />
       <div className="max-w-4xl ct-flex-col gap-6">
-        <section className="ct-flex-col gap-2 section bg-dark border-medium rounded-xl">
+        <section className="ct-flex-col gap-2 section bg-dark border-medium">
           <h1>Francisco Javier Bernal Cabra</h1>
           <p>{aboutMe.description}</p>
           <div className="ct-flex-row">
