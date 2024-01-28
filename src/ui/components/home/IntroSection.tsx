@@ -10,7 +10,7 @@ export default async function IntroSection({ lang }: { lang: Lang }) {
   return (
     <section className="section bg-dark ct-flex-col min-[550px]:flex-row md:col-span-2">
       <img
-        src="/profile-cv.jpg"
+        src="/profile-cv.webp"
         alt=""
         className="w-full max-w-[200px] m-auto object-cover aspect-square rounded-full border-2 border-medium"
       />

@@ -7,7 +7,7 @@ export default function Sidebar({ dict }: { dict: any }) {
       <div className="flex flex-col justify-between gap-2">
         <div className="ct-flex-col gap-2">
           <img
-            src="/profile-cv.jpg"
+            src="/profile-cv.webp"
             alt=""
             className="w-full max-w-[200px] m-auto object-cover aspect-square rounded-full border-2 border-medium"
           />
