@@ -5,6 +5,31 @@ import { fetchAllProjects } from "@/lib/dbdata";
 
 import getDictionary from "@/dictionaries/dictionaries";
 import { Lang } from "@/lib/definitions";
+import { Metadata, ResolvingMetadata } from "next";
+
+export async function generateMetadata({
+  params: { lang },
+  parent,
+}: {
+  params: { lang: Lang };
+  parent: ResolvingMetadata;
+}): Promise<Metadata> {
+  return {
+    title:
+      lang === "es"
+        ? "Proyectos | Portfolio de Aplicaciones Web"
+        : "Projects | Web Applications Portfolio",
+    description:
+      lang === "es"
+        ? "Echa un vistazo a mis últimos proyectos y aplicaciones web."
+        : "Take a look at my latest project and web applications.",
+    keywords: ["Programador", "web", "JavaScript", "React", "Málaga"],
+    referrer: "strict-origin-when-cross-origin",
+    openGraph: {
+      images: "",
+    },
+  };
+}
 
 export default async function Projects({
   params: { lang },

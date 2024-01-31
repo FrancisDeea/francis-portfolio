@@ -23,11 +23,13 @@ model Post {
 }
 
 model Category {
-    id          Int    @id @default(autoincrement())
-    name        String @unique @db.VarChar(30)
-    title       String @unique @db.VarChar(120)
-    description String @unique @db.VarChar(200)
-    posts       Post[]
+    id             Int    @id @default(autoincrement())
+    name           String @unique @db.VarChar(30)
+    title_es       String @unique @db.VarChar(120)
+    title_en       String @unique @db.VarChar(120)
+    description_es String @unique @db.VarChar(200)
+    description_en String @unique @db.VarChar(200)
+    posts          Post[]
 
     @@map("category")
 }

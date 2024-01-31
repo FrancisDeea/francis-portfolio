@@ -3,6 +3,31 @@ import { PERSONAL_DATA } from "@/lib/personal-data";
 import Sidebar from "@/ui/components/about-me/Sidebar";
 import { Lang } from "@/lib/definitions";
 import getDictionary from "@/dictionaries/dictionaries";
+import { Metadata, ResolvingMetadata } from "next";
+
+export async function generateMetadata({
+  params: { lang },
+  parent,
+}: {
+  params: { lang: Lang };
+  parent: ResolvingMetadata;
+}): Promise<Metadata> {
+  return {
+    title:
+      lang === "es"
+        ? "Sobre mí | Desarrollador Web JavaScript"
+        : "About me | JavaScript Web Developer",
+    description:
+      lang === "es"
+        ? "Desarrollador de aplicacione web, basadas en JavaScript y NextJS (React). +2 años de experiencia. Ubicado en Málaga, España."
+        : "Web application developer specialized in JavaScript and NextJS (React). +2 years experience. Malaga, Spain.",
+    keywords: ["Programador", "web", "JavaScript", "React", "Málaga"],
+    referrer: "strict-origin-when-cross-origin",
+    openGraph: {
+      images: "",
+    },
+  };
+}
 
 export default async function Page({
   params: { lang },
