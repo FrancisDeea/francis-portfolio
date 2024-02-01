@@ -2,13 +2,10 @@ import { Lang } from "@/lib/definitions";
 import Sidebar from "@/ui/components/aprende/Sidebar";
 import { Metadata, ResolvingMetadata } from "next";
 
-export async function generateMetadata({
-  params: { lang },
-  parent,
-}: {
-  params: { lang: Lang };
-  parent: ResolvingMetadata;
-}): Promise<Metadata> {
+export async function generateMetadata(
+  { params: { lang } }: { params: { lang: Lang } },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   return {
     title: {
       template: "%s | Francis Bernal",

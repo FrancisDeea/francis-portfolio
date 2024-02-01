@@ -7,13 +7,10 @@ import getDictionary from "@/dictionaries/dictionaries";
 import { Lang } from "@/lib/definitions";
 import { Metadata, ResolvingMetadata } from "next";
 
-export async function generateMetadata({
-  params: { lang },
-  parent,
-}: {
-  params: { lang: Lang };
-  parent: ResolvingMetadata;
-}): Promise<Metadata> {
+export async function generateMetadata(
+  { params: { lang } }: { params: { lang: Lang } },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   return {
     title:
       lang === "es"
