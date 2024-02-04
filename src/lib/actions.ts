@@ -150,10 +150,10 @@ export async function createPost(prevState: any, formData: FormData) {
   try {
     await prisma.post.create({
       data: {
-        title: title,
-        description: short_description,
+        title_es: title,
+        description_es: short_description,
         hashtags: hashtags,
-        content: description,
+        content_es: description,
         image: image,
         category_name: categoryName,
       },
