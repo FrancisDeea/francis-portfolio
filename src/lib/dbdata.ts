@@ -2,6 +2,7 @@
 
 import { PrismaClient } from "@prisma/client";
 import { sql } from "@vercel/postgres";
+import { cache } from "react";
 import type { Project } from "./definitions";
 
 const prisma = new PrismaClient();
@@ -18,26 +19,26 @@ export const fetchLastProject = async (number: number) => {
   return projects.rows;
 };
 
-export const fetchAllCategories = async () => {
+export const fetchAllCategories = cache(async () => {
   const categories = await prisma.category.findMany();
   return categories;
-};
+});
 
-export const fetchCategoryById = async (id: number) => {
+export const fetchCategoryById = cache(async (id: number) => {
   const category = await prisma.category.findUnique({
     where: {
       id: id,
     },
   });
   return category?.name;
-};
+});
 
-export const fetchAllPosts = async () => {
+export const fetchAllPosts = cache(async () => {
   const posts = await prisma.post.findMany();
   return posts;
-};
+});
 
-export const fetchPosts = async (quantity: number, category?: string) => {
+export const fetchPosts = cache(async (quantity: number, category?: string) => {
   const posts = await prisma.post.findMany({
     take: quantity,
     orderBy: {
@@ -51,9 +52,9 @@ export const fetchPosts = async (quantity: number, category?: string) => {
     },
   });
   return posts;
-};
+});
 
-export const fetchPostsByCategory = async (name: string) => {
+export const fetchPostsByCategory = cache(async (name: string) => {
   const posts = await prisma.post.findMany({
     where: {
       category_name: {
@@ -63,4 +64,4 @@ export const fetchPostsByCategory = async (name: string) => {
     },
   });
   return posts;
-};
+});

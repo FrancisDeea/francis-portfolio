@@ -49,6 +49,6 @@ export function getSlug(str: string): string {
 
 export function findByTitle(arr: Post[], slug: string): Post | undefined {
   return arr.find(
-    (post) => post.title.toLowerCase() === slug.replaceAll("-", " ")
+    (post) => post.title_es.toLowerCase() === slug.replaceAll("-", " ")
   );
 }

@@ -73,6 +73,7 @@ export default async function Page({
             quantity={6}
             category={fullCategory.name.toLowerCase()}
             dict={lessons}
+            lang={lang}
           />
         </div>
       </main>

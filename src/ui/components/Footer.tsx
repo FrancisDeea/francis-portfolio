@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="section bg-footer border-none font-medium rounded-md h-16 w-[calc(100%-1.5rem)] max-w-[1200px] m-auto ct-flex-row justify-evenly">
+    <footer className="section bg-footer border-none font-medium rounded-md h-16 w-[calc(100%-1.5rem)] max-w-[1200px] m-auto mt-4 ct-flex-row justify-evenly">
       <div className="flex flex-col text-center text-sm">
         <span>
           ❤️ Developer by{" "}
