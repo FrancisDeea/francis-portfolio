@@ -25,7 +25,7 @@ export default async function LatestPosts({
         const slug = getSlug(post.title_es);
         return (
           <Link
-            href={`/aprende/${category}/${slug}`}
+            href={`${lang}/aprende/${category}/${slug}`}
             key={post.id}
             className="w-full"
           >
