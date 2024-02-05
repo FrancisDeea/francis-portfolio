@@ -62,6 +62,10 @@
     "lessons": {
       "subtitle": "Lessons",
       "description": "New content coming soon!"
-    }
+    },
+    "title": "Learn Web Programming: Free Courses for beginners",
+    "description1": "Learn how to develop and program your own web applications from scratch. Courses of HTML, CSS, JS, React, Next, Tailwind y much more...",
+    "description2": "Web programming is a very useful skill that allows you to create solutions, collaborate with others and access a broad and dynamic job market. In addition, improves your logical, creative and analytical thinking, and makes you part of a universal language.",
+    "description3": "The web (Internet) is constantly expanding and technology is advancing every day... What are you waiting for?"
   }
 }

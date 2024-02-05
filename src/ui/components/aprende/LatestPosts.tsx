@@ -23,9 +23,10 @@ export default async function LatestPosts({
     <div className="ct-flex-row mt-2">
       {posts.map((post) => {
         const slug = getSlug(post.title_es);
+        const categoryName = post.category_name.toLowerCase();
         return (
           <Link
-            href={`/${lang}/aprende/${category}/${slug}`}
+            href={`/${lang}/aprende/${categoryName}/${slug}`}
             key={post.id}
             className="w-full"
           >
