@@ -17,7 +17,7 @@ export default function ModalNav({ lang, nav }: { lang: Lang; nav: string }) {
   };
 
   return (
-    <div className="md:hidden">
+    <div className="z-50 md:hidden">
       <label htmlFor="modalNav">
         <MenuIcon style="text-opposite" />
       </label>

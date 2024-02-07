@@ -1,10 +1,11 @@
 "use client";
 
 import { Lang } from "@/lib/definitions";
-import { findIcon } from "@/ui/icons";
+import { CaretIcon, findIcon } from "@/ui/icons";
 import { Category } from "@prisma/client";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
+import { useRef } from "react";
 
 export default function SidebarMobile({
   categories,
@@ -13,12 +14,19 @@ export default function SidebarMobile({
   categories: Category[];
   lang: Lang;
 }) {
+  const path = usePathname();
+  const category = path
+    .match(/(\/\w+)$/)[1]
+    .slice(1)
+    .toUpperCase();
   const asideRef = useRef<HTMLElement>(null);
   const linkRef = useRef<HTMLDivElement>(null);
+  const iconRef = useRef<HTMLElement>(null);
 
   const handleClick = () => {
     asideRef.current?.classList.toggle("h-[200px]");
     linkRef.current?.classList.toggle("hidden");
+    iconRef.current?.classList.toggle("rotate-180");
   };
 
   return (
@@ -28,8 +36,17 @@ export default function SidebarMobile({
       className="fixed bg-dark p-1 w-screen h-8 bottom-0 left-0 rounded-t-[3rem] transition-all overflow-hidden md:hidden"
     >
       <nav className="flex flex-col items-center h-full">
-        <span className="font-semibold text-center block w-full cursor-pointer">
-          Estas en: HTML
+        <span className="font-semibold text-center w-full cursor-pointer flex items-center justify-center gap-1">
+          {lang === "es" ? "Actualmente en: " : "Currently in: "}
+          <span className="text-yellow-500">
+            {category === "JAVASCRIPT" ? "JavaScript" : category}
+          </span>
+          <i
+            className="transition-transform animate-duration-500"
+            ref={iconRef}
+          >
+            <CaretIcon style="size-5" />
+          </i>
         </span>
         <div
           ref={linkRef}
