@@ -15,10 +15,7 @@ export default function SidebarMobile({
   lang: Lang;
 }) {
   const path = usePathname();
-  const category = path
-    .match(/(\/\w+)$/)[1]
-    .slice(1)
-    .toUpperCase();
+  const category = path.match(/(\/\w+)$/)![1].slice(1).toUpperCase();
   const asideRef = useRef<HTMLElement>(null);
   const linkRef = useRef<HTMLDivElement>(null);
   const iconRef = useRef<HTMLElement>(null);
