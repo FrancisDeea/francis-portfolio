@@ -1,5 +1,7 @@
+import { fetchAllCategories } from "@/lib/dbdata";
 import { Lang } from "@/lib/definitions";
 import Sidebar from "@/ui/components/aprende/Sidebar";
+import SidebarMobile from "@/ui/components/aprende/SidebarMobile";
 import { Metadata, ResolvingMetadata } from "next";
 
 export async function generateMetadata(
@@ -26,17 +28,20 @@ export async function generateMetadata(
   };
 }
 
-export default function Layout({
+export default async function Layout({
   children,
   params: { lang },
 }: {
   children: React.ReactNode;
   params: { lang: Lang };
 }) {
+  const categories = await fetchAllCategories();
+
   return (
     <div className="mt-4 flex flex-row min-h-[calc(100vh-96px)] gap-4 w-[calc(100%-1.5rem)] max-w-[1200px] m-auto">
       <Sidebar lang={lang} />
       {children}
+      <SidebarMobile categories={categories} lang={lang} />
     </div>
   );
 }
