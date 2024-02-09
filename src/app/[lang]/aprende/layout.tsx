@@ -38,7 +38,7 @@ export default async function Layout({
   const categories = await fetchAllCategories();
 
   return (
-    <div className="mt-4 flex flex-row min-h-[calc(100dvh-96px)] gap-4 w-[calc(100%-1.5rem)] max-w-[1200px] m-auto">
+    <div id="learn" className="mt-4 flex flex-row min-h-[calc(100dvh-96px)] gap-4 w-[calc(100%-1.5rem)] max-w-[1200px] m-auto">
       <Sidebar lang={lang} />
       {children}
       <SidebarMobile categories={categories} lang={lang} />

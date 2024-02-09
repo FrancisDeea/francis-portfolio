@@ -26,7 +26,7 @@
     --background2: 225deg 40% 18%;
     --dark: 2 6 23;
     --medium: 213deg 30% 32%;
-    --text: 213deg 51% 72%;
+    --text: 213deg 51% 80%;
     --text2: 213deg 51% 88%;
     --alert: 358deg 100% 67%;
     --opposite: 255 255 255;
@@ -102,6 +102,12 @@
     }
     p {
       @apply text-sm;
+    }
+  }
+
+  #learn {
+    p {
+      @apply max-md:text-base
     }
   }
 }
