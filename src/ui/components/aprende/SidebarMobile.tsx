@@ -2,7 +2,9 @@
 
 import { Lang } from "@/lib/definitions";
 import { CaretIcon, findIcon } from "@/ui/icons";
+
 import { Category } from "@prisma/client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef } from "react";
@@ -15,7 +17,19 @@ export default function SidebarMobile({
   lang: Lang;
 }) {
   const path = usePathname();
-  const category = path.match(/\/css|html|javascript/)![1].slice(1).toUpperCase();
+  const regex = /\/(css|html|javascript)/;
+  const categoryMatch = path.match(regex);
+  let category;
+
+  if (categoryMatch) {
+    category = categoryMatch[1].toUpperCase();
+  } else {
+    category = categoryMatch;
+  }
+
+  const info = lang === "es" ? "Actualmente en: " : "Currently in: ";
+  const info2 = lang === "es" ? "Elige una categoría" : "Choose a category";
+
   const asideRef = useRef<HTMLElement>(null);
   const linkRef = useRef<HTMLDivElement>(null);
   const iconRef = useRef<HTMLElement>(null);
@@ -34,10 +48,9 @@ export default function SidebarMobile({
     >
       <nav className="flex flex-col items-center h-full">
         <span className="font-semibold text-center w-full cursor-pointer flex items-center justify-center gap-1">
-          {lang === "es" ? "Actualmente en: " : "Currently in: "}
-          <span className="text-yellow-500">
-            {category === "JAVASCRIPT" ? "JavaScript" : category}
-          </span>
+          {!category && info2}
+          {category && info}
+          {category && <span className="text-yellow-500">{category}</span>}
           <i
             className="transition-transform animate-duration-500"
             ref={iconRef}
