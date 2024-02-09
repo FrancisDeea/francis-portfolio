@@ -36,8 +36,10 @@ export default async function Page({
       <header className="ct-flex-col gap-2">
         <h1 className="text-opposite">{learn.title}</h1>
         <p className="text-text font-medium">{learn.description1}</p>
-        <details className="bg-background1 rounded-md p-3">
-          <summary className="font-medium text-opposite">¿Por qué aprender programación web?</summary>
+        <details className="bg-background1 rounded-md p-3 cursor-pointer">
+          <summary className="font-medium text-opposite">
+            {learn.question}
+          </summary>
           <p className="text-text font-medium my-4">{learn.description2}</p>
           <p className="text-text font-medium">{learn.description3}</p>
         </details>

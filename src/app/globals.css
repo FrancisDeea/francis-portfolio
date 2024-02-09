@@ -26,7 +26,7 @@
     --background2: 225deg 40% 18%;
     --dark: 2 6 23;
     --medium: 213deg 30% 32%;
-    --text: 213deg 51% 80%;
+    --text: 213deg 51% 85%;
     --text2: 213deg 51% 88%;
     --alert: 358deg 100% 67%;
     --opposite: 255 255 255;
@@ -36,7 +36,7 @@
       hsla(226, 58%, 12%, 1) 100%
     );
     --hashtags: 56 100% 50%;
-    --footer: #1d2837
+    --footer: #1d2837;
   }
 
   body {
@@ -81,8 +81,10 @@
   }
 
   #resume {
-    h1,h2,h3 {
-      @apply text-text2
+    h1,
+    h2,
+    h3 {
+      @apply text-text2;
     }
     h1 {
       @apply text-2xl;
@@ -92,11 +94,16 @@
     }
 
     p {
-      @apply text-base font-normal text-text2;
+      @apply text-base font-normal text-text;
+    }
+
+    p:not(:last-child) {
+      @apply mb-3;
     }
   }
 
-  #project, #curse {
+  #project,
+  #curse {
     h3 {
       @apply text-lg;
     }
@@ -107,7 +114,10 @@
 
   #learn {
     p {
-      @apply max-md:text-base
+      @apply max-md:text-base;
+    }
+    p:not(:last-child) {
+      @apply mb-2;
     }
   }
 }
