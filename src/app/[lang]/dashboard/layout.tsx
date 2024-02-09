@@ -20,7 +20,7 @@ export default function Layout({
   params: { lang: Lang };
 }) {
   return (
-    <main className="max-lg:p-4 pt-4 lg:h-[calc(100vh-80px)] ct-flex-col justify-start lg:ct-flex-row lg:items-stretch">
+    <main className="max-lg:p-4 pt-4 lg:h-[calc(100dvh-80px)] ct-flex-col justify-start lg:ct-flex-row lg:items-stretch">
       <NotificationContextProvider>
         <Notification />
         <SideNav lang={lang} />

@@ -54,7 +54,7 @@ export default async function Page({
 
   if (fullCategory)
     return (
-      <main className="max-w-full flex-1 min-h-[calc(100vh-96px)] p-4 rounded-md border-medium border-2 bg-background2 flex flex-col gap-4">
+      <main className="max-w-full flex-1 min-h-[calc(100dvh-96px)] p-4 rounded-md border-medium border-2 bg-background2 flex flex-col gap-4">
         <header className="ct-flex-col gap-2">
           <h1 className="text-opposite">
             {lang === "es" ? fullCategory.title_es : fullCategory.title_en}

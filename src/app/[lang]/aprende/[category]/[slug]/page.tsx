@@ -65,7 +65,7 @@ export default async function Page({
     const categoryFormated = post?.category_name;
     const icon = icons[categoryFormated as keyof typeof icons];
     return (
-      <main className="flex-1 min-h-[calc(100vh-96px)]">
+      <main className="flex-1 min-h-[calc(100dvh-96px)]">
         <article
           id="post"
           className="section rounded-md border-medium border-2 bg-background2"
