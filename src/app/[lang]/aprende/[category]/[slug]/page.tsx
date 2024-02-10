@@ -73,13 +73,19 @@ export default async function Page({
           <header className="mb-4 ct-flex-col">
             <h1 className="mb-1 text-opposite">{title}</h1>
             <div className="text-sm ct-flex-col gap-1 lg:ct-flex-row lg:justify-start">
-              <span className="flex flex-row items-center gap-1 rounded-full border border-medium px-3 py-1 w-fit font-medium bg-dark">
+              <a
+                href={`/${lang}/aprende/${category}`}
+                className="flex flex-row items-center gap-1 rounded-full border border-medium px-3 py-1 w-fit font-medium bg-dark"
+              >
                 {icon}{" "}
                 {lang === "es" ? "Estas aprendiendo" : "You are learning"}{" "}
-                {categoryFormated}
-              </span>
+                <span className="text-yellow-500 font-semibold">
+                  {categoryFormated}
+                </span>
+              </a>
               <span className="">
-              {lang === "es" ? "Fecha creación" : "Created at"}: {post.createdAt.toLocaleDateString()}
+                {lang === "es" ? "Fecha creación" : "Created at"}:{" "}
+                {post.createdAt.toLocaleDateString()}
               </span>
             </div>
             <p className="!text-text font-medium">{description}</p>

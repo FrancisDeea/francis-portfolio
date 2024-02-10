@@ -94,7 +94,7 @@
     }
 
     p {
-      @apply text-base font-normal text-text;
+      @apply text-base text-text;
     }
 
     p:not(:last-child) {

@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 export default function Sidebar({ dict }: { dict: any }) {
-  console.log(dict);
 
   return (
     <aside className="section rounded-md border-2 bg-background1 p-4 flex-1 max-[896px]:hidden h-min sticky top-4">
@@ -15,20 +14,26 @@ export default function Sidebar({ dict }: { dict: any }) {
             <span className="font-semibold text-lg text-text2 text-center">
               {dict.greeting}
             </span>
-            <span className="font-bold text-2xl text-alert text-center">
+            <span className="font-semibold text-xl text-alert text-center">
               {dict.position}
             </span>
           </div>
           <div className="ct-flex-row gap-2">
             <a
-              href="/francis-bernal-resume.pdf"
+              href="/Francis-Bernal-Cabra-Resume.pdf"
               download
               className="btn-link text-sm text-center"
               id="cv"
             >
               {dict.downloadButton}
             </a>
-            <a className="btn-link text-sm flex-1 text-center">LinkedIn</a>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/francis-bernal-full-stack-developer/"
+              className="btn-link text-sm flex-1 text-center"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
       </div>

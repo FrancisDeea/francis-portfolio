@@ -47,26 +47,28 @@ export default async function Page({
           <p>{aboutMe.description}</p>
           <div className="ct-flex-row">
             <a
-              href="http://"
-              className="h-9 w-9 border-2 border-medium grid place-content-center rounded-sm hover:bg-medium/50 transition-colors"
+              target="_blank"
+              href="https://www.linkedin.com/in/francis-bernal-full-stack-developer/"
+              className="h-9 w-9 border-2 border-medium bg-medium grid place-content-center rounded-sm hover:bg-medium/50 transition-colors"
             >
               <LinkedinIcon style="h-5 w-5 text-opposite/70" />
             </a>
             <a
-              href="http://"
-              className="h-9 w-9 border-2 border-medium grid place-content-center rounded-sm hover:bg-medium/50 transition-colors"
+              href="mailto:francisbernal14@gmail.com"
+              className="h-9 w-9 border-2 border-medium bg-medium grid place-content-center rounded-sm hover:bg-medium/50 transition-colors"
             >
               <MailIcon style="h-5 w-5 text-opposite/70" />
             </a>
             <a
-              href="http://"
-              className="h-9 w-9 border-2 border-medium grid place-content-center rounded-sm hover:bg-medium/50 transition-colors"
+              href="http://github.com/francisdeea"
+              className="h-9 w-9 border-2 border-medium bg-medium grid place-content-center rounded-sm hover:bg-medium/50 transition-colors"
             >
               <GithubIcon style="h-5 w-5 text-opposite/70" />
             </a>
             <a
-              href="http://"
-              className="h-9 px-2 border-2 border-medium grid place-content-center rounded-sm hover:bg-medium/50 transition-colors font-semibold text-sm"
+              href="/Francis-Bernal-Cabra-Resume.pdf"
+              className="h-9 px-2 border-2 border-medium bg-medium grid place-content-center rounded-sm hover:bg-medium/50 transition-colors font-bold text-sm"
+              download
             >
               {aboutMe.cv}
             </a>
