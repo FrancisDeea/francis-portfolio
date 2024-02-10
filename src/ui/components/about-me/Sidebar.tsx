@@ -2,7 +2,7 @@
 export default function Sidebar({ dict }: { dict: any }) {
 
   return (
-    <aside className="section rounded-md border-2 bg-background1 p-4 flex-1 max-[896px]:hidden h-min sticky top-4">
+    <aside className="section rounded-md border-2 bg-background1 p-4 w-72 max-[896px]:hidden h-min sticky top-4">
       <div className="flex flex-col justify-between gap-2">
         <div className="ct-flex-col gap-2">
           <img

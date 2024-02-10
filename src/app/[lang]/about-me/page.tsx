@@ -41,7 +41,7 @@ export default async function Page({
       className="pt-4 flex flex-row gap-4 w-[calc(100%-1.5rem)] max-w-[1200px]"
     >
       <Sidebar dict={aboutMe} />
-      <div className="max-w-4xl ct-flex-col gap-6">
+      <div className="max-w-4xl flex-1 ct-flex-col gap-6">
         <section className="ct-flex-col gap-2 section bg-dark border-medium">
           <h1>Francisco Javier Bernal Cabra</h1>
           <p>{aboutMe.description}</p>
