@@ -60,13 +60,14 @@ export default async function Page({
               <MailIcon style="h-5 w-5 text-opposite/70" />
             </a>
             <a
+              target="_blank"
               href="http://github.com/francisdeea"
               className="h-9 w-9 border-2 border-medium bg-medium grid place-content-center rounded-sm hover:bg-medium/50 transition-colors"
             >
               <GithubIcon style="h-5 w-5 text-opposite/70" />
             </a>
             <a
-              href="/Francis-Bernal-Cabra-Resume.pdf"
+              href="/Francis-Bernal-Resume.pdf"
               className="h-9 px-2 border-2 border-medium bg-medium grid place-content-center rounded-sm hover:bg-medium/50 transition-colors font-bold text-sm"
               download
             >

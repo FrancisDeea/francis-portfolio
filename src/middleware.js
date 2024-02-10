@@ -52,6 +52,6 @@ export const config = {
         // '/'
         // Optional: only run on root (/) URL
         // '/'
-        '/((?!api|_next/static|_next/image|.*\\.webp$|.*\\.svg$).*)'
+        '/((?!api|_next/static|_next/image|.*\\.webp$|.*\\.svg$|.*\\.pdf$).*)'
     ],
 }
