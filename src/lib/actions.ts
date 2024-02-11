@@ -19,29 +19,35 @@ import { AuthError } from "next-auth";
 
 const prisma = new PrismaClient();
 
+export async function uploadImage(file: File) {
+  let urlImage;
+  const formData = new FormData();
+  formData.append("image", file);
+  const { image } = imageServerSchema.parse(formData);
+
+  const buffer = await image.arrayBuffer();
+  const checkedName = image.name.replaceAll(" ", "-");
+
+  try {
+    await writeFile(
+      `public/project-images/${checkedName}`,
+      Buffer.from(buffer)
+    );
+    urlImage = `/${checkedName}`;
+  } catch (err) {
+    console.error(err);
+  }
+
+  return urlImage;
+}
+
 export async function createProject(prevState: any, formData: FormData) {
   const imageRawData = formData.get("main-image");
   let urlImageRawData = null;
 
-  if (typeof imageRawData !== "string") {
-    const formData = new FormData();
-    formData.append("image", imageRawData as File);
-    const { image } = imageServerSchema.parse(formData);
-
-    const buffer = await image.arrayBuffer();
-    const checkedName = image.name.replaceAll(" ", "-");
-
-    try {
-      await writeFile(
-        `public/project-images/${checkedName}`,
-        Buffer.from(buffer)
-      );
-      urlImageRawData = `/${checkedName}`;
-    } catch (err) {
-      console.error(err);
-    }
-  } else {
-    urlImageRawData = imageRawData.toString();
+  if (imageRawData) {
+    const url = await uploadImage(imageRawData as File);
+    urlImageRawData = url;
   }
 
   const technologiesRawData = (
