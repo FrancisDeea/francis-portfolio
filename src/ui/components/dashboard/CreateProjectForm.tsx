@@ -84,7 +84,7 @@ export default function CreateProjectForm() {
           id="image-file"
           type="file"
           name="main-image"
-          className="hidden"
+          className=""
         />
       </div>
 
