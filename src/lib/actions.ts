@@ -30,7 +30,7 @@ export async function uploadImage(file: File) {
 
   try {
     await writeFile(
-      `${process.cwd()}/public/project-images/${checkedName}`,
+      `/public/project-images/${checkedName}`,
       Buffer.from(buffer)
     );
     urlImage = `/${checkedName}`;
