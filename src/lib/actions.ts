@@ -23,15 +23,14 @@ export async function uploadImage(file: File) {
   let urlImage;
   const formData = new FormData();
   formData.append("image", file);
-  // const { image } = imageServerSchema.parse(formData);
-  const image = formData.get("image") as File;
+  const { image } = imageServerSchema.parse(formData);
 
   const buffer = await image.arrayBuffer();
   const checkedName = image.name.replaceAll(" ", "-");
 
   try {
     await writeFile(
-      `public/project-images/${checkedName}`,
+      `${process.cwd()}/public/project-images/${checkedName}`,
       Buffer.from(buffer)
     );
     urlImage = `/${checkedName}`;
