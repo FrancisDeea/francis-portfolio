@@ -62,7 +62,7 @@ export async function createProject(prevState: any, formData: FormData) {
     description: formData.get("description"),
   });
 
-  console.log(validatedFormData)
+  console.log(validatedFormData);
 
   if (!validatedFormData.success) {
     return {
@@ -73,13 +73,14 @@ export async function createProject(prevState: any, formData: FormData) {
     };
   }
 
-  const { title, image, technologies, description } = validatedFormData.data;
+  const { title, image, live, github, technologies, description } =
+    validatedFormData.data;
 
   const postgresqTechArray = await technologiesToPSQLArray(technologies);
 
   try {
-    await sql`INSERT INTO projects(title, image_url, technologies, description)
-      VALUES(${title}, ${image}, ${postgresqTechArray}, ${description})`;
+    await sql`INSERT INTO projects(title, image_url, live_url, github_url, technologies, description)
+      VALUES(${title}, ${image}, ${live}, ${github}, ${postgresqTechArray}, ${description})`;
   } catch (err) {
     console.error(err);
     return {
