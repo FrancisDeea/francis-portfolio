@@ -10,6 +10,7 @@ import {
   imageServerSchema,
 } from "./zodSchemas";
 import { writeFile } from "node:fs/promises";
+import path from "node:path";
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
@@ -30,7 +31,7 @@ export async function uploadImage(file: File) {
 
   try {
     await writeFile(
-      `/public/project-images/${checkedName}`,
+      `./public/project-images/${checkedName}`,
       Buffer.from(buffer)
     );
     urlImage = `/${checkedName}`;
