@@ -6,6 +6,7 @@ import { fetchAllProjects } from "@/lib/dbdata";
 import getDictionary from "@/dictionaries/dictionaries";
 import { Lang } from "@/lib/definitions";
 import { Metadata, ResolvingMetadata } from "next";
+import { revalidatePath } from "next/cache";
 
 export async function generateMetadata(
   { params: { lang } }: { params: { lang: Lang } },
@@ -33,6 +34,7 @@ export default async function Projects({
 }: {
   params: { lang: Lang };
 }) {
+  revalidatePath('/es/projects')
   const projects = await fetchAllProjects();
   const { projects: projectsDict } = await getDictionary(lang);
 

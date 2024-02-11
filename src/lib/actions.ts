@@ -62,6 +62,8 @@ export async function createProject(prevState: any, formData: FormData) {
     description: formData.get("description"),
   });
 
+  console.log(validatedFormData)
+
   if (!validatedFormData.success) {
     return {
       message: JSON.stringify(
@@ -86,8 +88,9 @@ export async function createProject(prevState: any, formData: FormData) {
     };
   }
 
-  revalidatePath("/dashboard/projects");
-  redirect("/dashboard/projects");
+  revalidatePath("/es/dashboard/projects");
+  revalidatePath("/es/projects");
+  redirect("/es/dashboard/projects");
 }
 
 export async function deleteProject(id: string) {
@@ -99,8 +102,8 @@ export async function deleteProject(id: string) {
       JSON.stringify(`Failed to save project in DDBB: ${err.code}`)
     );
   }
-  revalidatePath("/dashboard/projects");
-  revalidatePath("/projects");
+  revalidatePath("/es/dashboard/projects");
+  revalidatePath("/es/projects");
 }
 
 export async function createPost(prevState: any, formData: FormData) {
@@ -166,8 +169,8 @@ export async function createPost(prevState: any, formData: FormData) {
     };
   }
 
-  revalidatePath("/dashboard/posts");
-  redirect("/dashboard/posts");
+  revalidatePath("/es/dashboard/posts");
+  redirect("/es/dashboard/posts");
 }
 
 export async function deletePost(id: number) {
