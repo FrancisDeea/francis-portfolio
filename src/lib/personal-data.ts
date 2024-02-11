@@ -81,6 +81,15 @@ export const PERSONAL_DATA = {
       stack: ["Next", "Tailwind", "JavaScript", "HTML"],
       url: "https://restaurant-project-plum.vercel.app/",
     },
+    {
+      id: 10,
+      type: "fullstack",
+      name: "Dashboard NextJS",
+      description: `Management dashboard with login system, server actions to create/edit/delete invoices, component streaming, pagination, search engine...`,
+      description2: `Dashboard de gestión con sistema de login, server actions para crear/editar/borrar facturas, streaming de componentes, paginación, buscador...`,
+      stack: ["Next", "React", "Postgresql", "Tailwind", "JavaScript"],
+      url: "https://nextjs-dashboard-project.vercel.app/",
+    },
   ],
   education: [
     {

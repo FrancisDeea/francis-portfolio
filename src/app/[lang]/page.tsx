@@ -5,6 +5,7 @@ import IntroSection from "@/ui/components/home/IntroSection";
 import ContactSection from "@/ui/components/home/ContactSection";
 
 import { Lang } from "@/lib/definitions";
+import { revalidatePath } from "next/cache";
 
 export default function Index({
   params: { lang },

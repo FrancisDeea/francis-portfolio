@@ -88,25 +88,27 @@ export default async function Page({
         <section className="section bg-background2 border-medium">
           <h2>{aboutMe.subtitle2}</h2>
           <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
-            {projects.map((item) => {
-              return (
-                <a href={item.url} key={item.id} target="_blank">
-                  <article
-                    id="project"
-                    className="bg-dark rounded-md p-4 h-full flex flex-col justify-between gap-2"
-                  >
-                    <h3>{item.name}</h3>
-                    <p>{item.description}</p>
-                    <div className="ct-flex-row gap-2">
-                      {item.stack.map((item) => {
-                        const icon = findIcon(item);
-                        return icon;
-                      })}
-                    </div>
-                  </article>
-                </a>
-              );
-            })}
+            {projects
+              .sort((a, b) => b.id - a.id)
+              .map((item) => {
+                return (
+                  <a href={item.url} key={item.id} target="_blank">
+                    <article
+                      id="project"
+                      className="bg-dark rounded-md p-4 h-full flex flex-col justify-between gap-2"
+                    >
+                      <h3>{item.name}</h3>
+                      <p>{item.description}</p>
+                      <div className="ct-flex-row gap-2">
+                        {item.stack.map((item) => {
+                          const icon = findIcon(item);
+                          return icon;
+                        })}
+                      </div>
+                    </article>
+                  </a>
+                );
+              })}
           </div>
         </section>
 
