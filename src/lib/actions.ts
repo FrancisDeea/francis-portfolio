@@ -67,7 +67,7 @@ export async function createProject(prevState: any, formData: FormData) {
   if (!validatedFormData.success) {
     return {
       message: JSON.stringify(
-        Object.values(validatedFormData.error).join(", ")
+        Object.values(validatedFormData.error.flatten()).join(", ")
       ),
       status: "error",
     };
