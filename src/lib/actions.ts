@@ -28,12 +28,10 @@ export async function uploadImage(file: File) {
 
   const buffer = await image.arrayBuffer();
   const checkedName = image.name.replaceAll(" ", "-");
+  const route = path.join(process.cwd(), "/public/project-images" ,checkedName);
 
   try {
-    await writeFile(
-      `./public/project-images/${checkedName}`,
-      Buffer.from(buffer)
-    );
+    await writeFile(route, Buffer.from(buffer));
     urlImage = `/${checkedName}`;
   } catch (err) {
     console.error(err);
