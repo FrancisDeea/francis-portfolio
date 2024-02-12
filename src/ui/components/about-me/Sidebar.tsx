@@ -20,7 +20,7 @@ export default function Sidebar({ dict }: { dict: any }) {
           </div>
           <div className="ct-flex-row gap-2">
             <a
-              href="/Francis-Bernal-Resume.pdf"
+              href="/Francis-Bernal-Resume-2024.pdf"
               download
               className="btn-link text-sm text-center"
               id="cv"

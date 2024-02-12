@@ -67,7 +67,7 @@ export default async function Page({
               <GithubIcon style="h-5 w-5 text-opposite/70" />
             </a>
             <a
-              href="/Francis-Bernal-Resume.pdf"
+              href="/Francis-Bernal-Resume-2024.pdf"
               className="h-9 px-2 border-2 border-medium bg-medium grid place-content-center rounded-sm hover:bg-medium/50 transition-colors font-bold text-sm"
               download
             >
