@@ -90,6 +90,15 @@ export const PERSONAL_DATA = {
       stack: ["Next", "React", "Postgresql", "Tailwind", "JavaScript"],
       url: "https://nextjs-dashboard-project.vercel.app/",
     },
+    {
+      id: 11,
+      type: "fullstack",
+      name: "Movie Library NextJS",
+      description: `Movie library optimised to receive more than 500k results with pagination, login, real-time chat with Socket and turso (SQLite), graphs with chartjs...`,
+      description2: `Librería de películas optimizada para recibir más de 500k de resultados con paginación, login, chat en tiempo real con Socket y turso (SQLite), gráficas con chartjs...`,
+      stack: ["Next", "React", "Postgresql", "Tailwind", "JavaScript"],
+      url: "https://movielibrary-omega.vercel.app/",
+    },
   ],
   education: [
     {
