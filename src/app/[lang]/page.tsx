@@ -12,6 +12,7 @@ export default function Index({
 }: {
   params: { lang: Lang };
 }) {
+  revalidatePath('/')
   return (
     <main className="w-[calc(100%-1.5rem)] pt-4 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <IntroSection lang={lang} />

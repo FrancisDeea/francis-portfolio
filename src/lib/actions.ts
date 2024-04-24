@@ -28,7 +28,7 @@ export async function uploadImage(file: File) {
 
   const buffer = await image.arrayBuffer();
   const checkedName = image.name.replaceAll(" ", "-");
-  const route = path.join(process.cwd(), "/public/project-images" ,checkedName);
+  const route = path.join(process.cwd(), "/public/project-images", checkedName);
 
   try {
     await writeFile(route, Buffer.from(buffer));
@@ -200,14 +200,6 @@ export async function authenticate(
   try {
     await signIn("credentials", formData);
   } catch (error) {
-    if (error instanceof AuthError) {
-      switch (error.type) {
-        case "CredentialsSignin":
-          return "Invalid credentials.";
-        default:
-          return "Something went wrong.";
-      }
-    }
-    throw error;
+    console.error(error);
   }
 }
