@@ -201,5 +201,6 @@ export async function authenticate(
     await signIn("credentials", formData);
   } catch (error) {
     console.error(error);
+    return "Credentials wrong"
   }
 }

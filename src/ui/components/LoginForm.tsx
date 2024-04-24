@@ -28,11 +28,7 @@ export default function LoginForm() {
         placeholder="Enter Password"
       />
       <LoginButton />
-      <div
-        className="flex h-4"
-        aria-live="polite"
-        aria-atomic="true"
-      >
+      <div className="flex h-4" aria-live="polite" aria-atomic="true">
         {errorMessage && (
           <>
             <p className="text-sm text-red-500">{errorMessage}</p>
